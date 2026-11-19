@@ -75,7 +75,7 @@ public class PecasRecusadasService {
         PecasRecusadas p = new PecasRecusadas();
         p.setEsteira(esteira);
         p.setDataHora(agora);
-        p.setImagemUrl(imagem == null || imagem.length == 0 ? null : salvarImagem(imagem, agora));
+        p.setImagem(imagem == null || imagem.length == 0 ? null : imagem);
         p.setErroIdentificado(erro);
         p.setNivelAcuracia(acuracia);
         if (operadorId != null) {
@@ -90,6 +90,9 @@ public class PecasRecusadasService {
     @Transactional(readOnly = true)
     public Resource imagem(Integer id) {
         PecasRecusadas p = buscar(id);
+        if (p.getImagem() != null && p.getImagem().length > 0) {
+            return new org.springframework.core.io.ByteArrayResource(p.getImagem());
+        }
         if (p.getImagemUrl() == null) {
             throw new RecursoNaoEncontradoException("Peca " + id + " nao possui imagem.");
         }
