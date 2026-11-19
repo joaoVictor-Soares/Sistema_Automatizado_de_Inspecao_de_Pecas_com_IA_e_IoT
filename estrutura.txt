@@ -1,0 +1,1462 @@
+Listagem de caminhos de pasta
+O número de série do volume é BE6E-47AA
+C:.
+¦   estrutura.txt
+¦   LEIA-ME-TESTE-BACKEND.md
+¦   
++---backend-esp
+¦   ¦   ONDE-MUDAR.md
+¦   ¦   
+¦   +---backend-spring
+¦       +---demo
+¦           +---src
+¦               +---main
+¦               ¦   +---java
+¦               ¦   ¦   +---com
+¦               ¦   ¦       +---pi
+¦               ¦   ¦           +---demo
+¦               ¦   ¦               +---config
+¦               ¦   ¦               ¦       EspProperties.java
+¦               ¦   ¦               ¦       
+¦               ¦   ¦               +---service
+¦               ¦   ¦                       EspSerialGateway.java
+¦               ¦   ¦                       
+¦               ¦   +---resources
+¦               ¦           application.properties
+¦               ¦           
+¦               +---test
+¦                   +---java
+¦                       +---com
+¦                           +---pi
+¦                               +---demo
+¦                                   ¦   TestSupport.java
+¦                                   ¦   
+¦                                   +---service
+¦                                           AtuadorServiceImplTest.java
+¦                                           
++---backend-spring-completo
+¦   +---backend-spring
+¦       ¦   backend.txt
+¦       ¦   doc_pastas.txt
+¦       ¦   
+¦       +---demo
+¦       ¦   ¦   .dockerignore
+¦       ¦   ¦   .gitattributes
+¦       ¦   ¦   .gitignore
+¦       ¦   ¦   Dockerfile
+¦       ¦   ¦   mvnw
+¦       ¦   ¦   mvnw.cmd
+¦       ¦   ¦   pom.xml
+¦       ¦   ¦   README.md
+¦       ¦   ¦   
+¦       ¦   +---.mvn
+¦       ¦   ¦   +---wrapper
+¦       ¦   ¦           maven-wrapper.properties
+¦       ¦   ¦           
+¦       ¦   +---src
+¦       ¦   ¦   +---main
+¦       ¦   ¦   ¦   +---java
+¦       ¦   ¦   ¦   ¦   +---com
+¦       ¦   ¦   ¦   ¦       +---pi
+¦       ¦   ¦   ¦   ¦           +---demo
+¦       ¦   ¦   ¦   ¦               ¦   DemoApplication.java
+¦       ¦   ¦   ¦   ¦               ¦   
+¦       ¦   ¦   ¦   ¦               +---captura-java
+¦       ¦   ¦   ¦   ¦               ¦   ¦   CapturaTampinha.java
+¦       ¦   ¦   ¦   ¦               ¦   ¦   pom.xml
+¦       ¦   ¦   ¦   ¦               ¦   ¦   
+¦       ¦   ¦   ¦   ¦               ¦   +---dados
+¦       ¦   ¦   ¦   ¦               ¦   ¦   +---aprovada
+¦       ¦   ¦   ¦   ¦               ¦   ¦   +---reprovada
+¦       ¦   ¦   ¦   ¦               ¦   +---libs
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-android-arm.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-android-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-android-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-android-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-linux-armhf.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-linux-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-windows-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-2.3.1-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       artoolkitplus-platform-2.3.1-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10-android-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10-android-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10-macosx-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-6.1.1-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       ffmpeg-platform-6.1.1-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       flycapture-2.13.3.31-1.5.9-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       flycapture-2.13.3.31-1.5.9-linux-armhf.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       flycapture-2.13.3.31-1.5.9-linux-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       flycapture-2.13.3.31-1.5.9-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       flycapture-2.13.3.31-1.5.9-windows-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       flycapture-2.13.3.31-1.5.9-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       flycapture-2.13.3.31-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       flycapture-platform-2.13.3.31-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-android-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-android-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-ios-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-ios-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-macosx-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacpp-platform-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacv-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       javacv-platform-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       jSerialComm-2.10.4.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10-android-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10-android-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10-macosx-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-1.84.1-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       leptonica-platform-1.84.1-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9-linux-armhf.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9-linux-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9-windows-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-2.2.6-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libdc1394-platform-2.2.6-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9-linux-armhf.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9-linux-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9-windows-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-0.5.7-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect-platform-0.5.7-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect2-0.2.0-1.5.9-linux-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect2-0.2.0-1.5.9-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect2-0.2.0-1.5.9-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect2-0.2.0-1.5.9-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect2-0.2.0-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       libfreenect2-platform-0.2.0-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-1.12.4-1.5.9-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-1.12.4-1.5.9-linux-armhf.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-1.12.4-1.5.9-linux-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-1.12.4-1.5.9-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-1.12.4-1.5.9-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-1.12.4-1.5.9-windows-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-1.12.4-1.5.9-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-1.12.4-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense-platform-1.12.4-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-2.53.1-1.5.9-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-2.53.1-1.5.9-linux-armhf.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-2.53.1-1.5.9-linux-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-2.53.1-1.5.9-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-2.53.1-1.5.9-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-2.53.1-1.5.9-windows-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-2.53.1-1.5.9-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-2.53.1-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       librealsense2-platform-2.53.1-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-android-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-android-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-ios-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-ios-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-macosx-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-0.3.26-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       openblas-platform-0.3.26-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-android-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-android-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-ios-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-ios-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-macosx-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-4.9.0-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       opencv-platform-4.9.0-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10-android-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10-android-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10-linux-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10-linux-ppc64le.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10-linux-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10-macosx-arm64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10-macosx-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-5.3.4-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       tesseract-platform-5.3.4-1.5.10.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       videoinput-0.200-1.5.9-windows-x86.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       videoinput-0.200-1.5.9-windows-x86_64.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       videoinput-0.200-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       videoinput-platform-0.200-1.5.9.jar
+¦       ¦   ¦   ¦   ¦               ¦   ¦       
+¦       ¦   ¦   ¦   ¦               ¦   +---out
+¦       ¦   ¦   ¦   ¦               ¦           CapturaTampinha$BackendClient.class
+¦       ¦   ¦   ¦   ¦               ¦           CapturaTampinha$Config.class
+¦       ¦   ¦   ¦   ¦               ¦           CapturaTampinha$Detector.class
+¦       ¦   ¦   ¦   ¦               ¦           CapturaTampinha$Esp.class
+¦       ¦   ¦   ¦   ¦               ¦           CapturaTampinha$Estado.class
+¦       ¦   ¦   ¦   ¦               ¦           CapturaTampinha.class
+¦       ¦   ¦   ¦   ¦               ¦           
+¦       ¦   ¦   ¦   ¦               +---client
+¦       ¦   ¦   ¦   ¦               ¦       PythonMlClient.java
+¦       ¦   ¦   ¦   ¦               ¦       
+¦       ¦   ¦   ¦   ¦               +---config
+¦       ¦   ¦   ¦   ¦               ¦       AdminInicializador.java
+¦       ¦   ¦   ¦   ¦               ¦       CameraProperties.java
+¦       ¦   ¦   ¦   ¦               ¦       EspProperties.java
+¦       ¦   ¦   ¦   ¦               ¦       ExecutorConfig.java
+¦       ¦   ¦   ¦   ¦               ¦       IaClientConfig.java
+¦       ¦   ¦   ¦   ¦               ¦       IaProperties.java
+¦       ¦   ¦   ¦   ¦               ¦       InspecaoProperties.java
+¦       ¦   ¦   ¦   ¦               ¦       SegurancaProperties.java
+¦       ¦   ¦   ¦   ¦               ¦       
+¦       ¦   ¦   ¦   ¦               +---controller
+¦       ¦   ¦   ¦   ¦               ¦       AtuadorController.java
+¦       ¦   ¦   ¦   ¦               ¦       AuthController.java
+¦       ¦   ¦   ¦   ¦               ¦       EsteiraController.java
+¦       ¦   ¦   ¦   ¦               ¦       EventoController.java
+¦       ¦   ¦   ¦   ¦               ¦       GlobalExceptionHandler.java
+¦       ¦   ¦   ¦   ¦               ¦       InspecaoController.java
+¦       ¦   ¦   ¦   ¦               ¦       PecasRecusadasController.java
+¦       ¦   ¦   ¦   ¦               ¦       ProducaoController.java
+¦       ¦   ¦   ¦   ¦               ¦       SimulacaoController.java
+¦       ¦   ¦   ¦   ¦               ¦       UsuarioController.java
+¦       ¦   ¦   ¦   ¦               ¦       
+¦       ¦   ¦   ¦   ¦               +---dto
+¦       ¦   ¦   ¦   ¦               ¦       AlterarSenhaRequest.java
+¦       ¦   ¦   ¦   ¦               ¦       AtuadorConfigDto.java
+¦       ¦   ¦   ¦   ¦               ¦       AtuadorStatusDto.java
+¦       ¦   ¦   ¦   ¦               ¦       DadosProducaoDto.java
+¦       ¦   ¦   ¦   ¦               ¦       EsteiraDto.java
+¦       ¦   ¦   ¦   ¦               ¦       EsteiraRequest.java
+¦       ¦   ¦   ¦   ¦               ¦       IaBase64Request.java
+¦       ¦   ¦   ¦   ¦               ¦       IaPredictResponse.java
+¦       ¦   ¦   ¦   ¦               ¦       InspecaoStatusDto.java
+¦       ¦   ¦   ¦   ¦               ¦       LoginRequest.java
+¦       ¦   ¦   ¦   ¦               ¦       LoginResponse.java
+¦       ¦   ¦   ¦   ¦               ¦       PecaRecusadaDto.java
+¦       ¦   ¦   ¦   ¦               ¦       ResultadoInspecaoDto.java
+¦       ¦   ¦   ¦   ¦               ¦       UsuarioDto.java
+¦       ¦   ¦   ¦   ¦               ¦       UsuarioRequest.java
+¦       ¦   ¦   ¦   ¦               ¦       
+¦       ¦   ¦   ¦   ¦               +---exception
+¦       ¦   ¦   ¦   ¦               ¦       CameraException.java
+¦       ¦   ¦   ¦   ¦               ¦       ConflitoException.java
+¦       ¦   ¦   ¦   ¦               ¦       CredenciaisInvalidasException.java
+¦       ¦   ¦   ¦   ¦               ¦       EspException.java
+¦       ¦   ¦   ¦   ¦               ¦       IaException.java
+¦       ¦   ¦   ¦   ¦               ¦       OperacaoInvalidaException.java
+¦       ¦   ¦   ¦   ¦               ¦       RecursoNaoEncontradoException.java
+¦       ¦   ¦   ¦   ¦               ¦       TentativasExcedidasException.java
+¦       ¦   ¦   ¦   ¦               ¦       
+¦       ¦   ¦   ¦   ¦               +---model
+¦       ¦   ¦   ¦   ¦               ¦       DadosProducao.java
+¦       ¦   ¦   ¦   ¦               ¦       Esteira.java
+¦       ¦   ¦   ¦   ¦               ¦       PecasRecusadas.java
+¦       ¦   ¦   ¦   ¦               ¦       Usuario.java
+¦       ¦   ¦   ¦   ¦               ¦       
+¦       ¦   ¦   ¦   ¦               +---repository
+¦       ¦   ¦   ¦   ¦               ¦       DadosProducaoRepository.java
+¦       ¦   ¦   ¦   ¦               ¦       EsteiraRepository.java
+¦       ¦   ¦   ¦   ¦               ¦       PecasRecusadasRepository.java
+¦       ¦   ¦   ¦   ¦               ¦       UsuarioRepository.java
+¦       ¦   ¦   ¦   ¦               ¦       
+¦       ¦   ¦   ¦   ¦               +---security
+¦       ¦   ¦   ¦   ¦               ¦       LoginLimiter.java
+¦       ¦   ¦   ¦   ¦               ¦       OperadorResolver.java
+¦       ¦   ¦   ¦   ¦               ¦       SecurityConfig.java
+¦       ¦   ¦   ¦   ¦               ¦       TokenAuthFilter.java
+¦       ¦   ¦   ¦   ¦               ¦       TokenService.java
+¦       ¦   ¦   ¦   ¦               ¦       UsuarioLogado.java
+¦       ¦   ¦   ¦   ¦               ¦       
+¦       ¦   ¦   ¦   ¦               +---service
+¦       ¦   ¦   ¦   ¦                       AtuadorService.java
+¦       ¦   ¦   ¦   ¦                       AtuadorServiceImpl.java
+¦       ¦   ¦   ¦   ¦                       CameraService.java
+¦       ¦   ¦   ¦   ¦                       EspGateway.java
+¦       ¦   ¦   ¦   ¦                       EspSerialGateway.java
+¦       ¦   ¦   ¦   ¦                       EspSimuladoControl.java
+¦       ¦   ¦   ¦   ¦                       EspSimuladoGateway.java
+¦       ¦   ¦   ¦   ¦                       EsteiraService.java
+¦       ¦   ¦   ¦   ¦                       EventoService.java
+¦       ¦   ¦   ¦   ¦                       InspecaoOrchestratorService.java
+¦       ¦   ¦   ¦   ¦                       PecasRecusadasService.java
+¦       ¦   ¦   ¦   ¦                       ProducaoService.java
+¦       ¦   ¦   ¦   ¦                       SensorPollingService.java
+¦       ¦   ¦   ¦   ¦                       UsuarioService.java
+¦       ¦   ¦   ¦   ¦                       
+¦       ¦   ¦   ¦   +---resources
+¦       ¦   ¦   ¦           application.properties
+¦       ¦   ¦   ¦           
+¦       ¦   ¦   +---test
+¦       ¦   ¦       +---java
+¦       ¦   ¦       ¦   +---com
+¦       ¦   ¦       ¦       +---pi
+¦       ¦   ¦       ¦           +---demo
+¦       ¦   ¦       ¦               ¦   DemoApplicationTests.java
+¦       ¦   ¦       ¦               ¦   TestSupport.java
+¦       ¦   ¦       ¦               ¦   
+¦       ¦   ¦       ¦               +---security
+¦       ¦   ¦       ¦               ¦       LoginLimiterTest.java
+¦       ¦   ¦       ¦               ¦       TokenServiceTest.java
+¦       ¦   ¦       ¦               ¦       
+¦       ¦   ¦       ¦               +---service
+¦       ¦   ¦       ¦                       AtuadorServiceImplTest.java
+¦       ¦   ¦       ¦                       EspSimuladoGatewayTest.java
+¦       ¦   ¦       ¦                       
+¦       ¦   ¦       +---resources
+¦       ¦   ¦               application-test.properties
+¦       ¦   ¦               
+¦       ¦   +---target
+¦       ¦       +---classes
+¦       ¦       ¦   ¦   application.properties
+¦       ¦       ¦   ¦   
+¦       ¦       ¦   +---com
+¦       ¦       ¦       +---pi
+¦       ¦       ¦           +---demo
+¦       ¦       ¦               ¦   DemoApplication.class
+¦       ¦       ¦               ¦   
+¦       ¦       ¦               +---client
+¦       ¦       ¦               ¦       PythonMlClient$1.class
+¦       ¦       ¦               ¦       PythonMlClient$HealthResponse.class
+¦       ¦       ¦               ¦       PythonMlClient.class
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +---config
+¦       ¦       ¦               ¦       AdminInicializador.class
+¦       ¦       ¦               ¦       CameraProperties.class
+¦       ¦       ¦               ¦       EspProperties.class
+¦       ¦       ¦               ¦       ExecutorConfig.class
+¦       ¦       ¦               ¦       IaClientConfig.class
+¦       ¦       ¦               ¦       IaProperties.class
+¦       ¦       ¦               ¦       InspecaoProperties.class
+¦       ¦       ¦               ¦       SegurancaProperties.class
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +---controller
+¦       ¦       ¦               ¦       AtuadorController.class
+¦       ¦       ¦               ¦       AuthController.class
+¦       ¦       ¦               ¦       EsteiraController.class
+¦       ¦       ¦               ¦       EventoController.class
+¦       ¦       ¦               ¦       GlobalExceptionHandler.class
+¦       ¦       ¦               ¦       InspecaoController.class
+¦       ¦       ¦               ¦       PecasRecusadasController.class
+¦       ¦       ¦               ¦       ProducaoController.class
+¦       ¦       ¦               ¦       SimulacaoController.class
+¦       ¦       ¦               ¦       UsuarioController.class
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +---dto
+¦       ¦       ¦               ¦       AlterarSenhaRequest.class
+¦       ¦       ¦               ¦       AtuadorConfigDto.class
+¦       ¦       ¦               ¦       AtuadorStatusDto.class
+¦       ¦       ¦               ¦       DadosProducaoDto.class
+¦       ¦       ¦               ¦       EsteiraDto.class
+¦       ¦       ¦               ¦       EsteiraRequest.class
+¦       ¦       ¦               ¦       IaBase64Request.class
+¦       ¦       ¦               ¦       IaPredictResponse.class
+¦       ¦       ¦               ¦       InspecaoStatusDto.class
+¦       ¦       ¦               ¦       LoginRequest.class
+¦       ¦       ¦               ¦       LoginResponse.class
+¦       ¦       ¦               ¦       PecaRecusadaDto.class
+¦       ¦       ¦               ¦       ResultadoInspecaoDto.class
+¦       ¦       ¦               ¦       UsuarioDto.class
+¦       ¦       ¦               ¦       UsuarioRequest.class
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +---exception
+¦       ¦       ¦               ¦       CameraException.class
+¦       ¦       ¦               ¦       ConflitoException.class
+¦       ¦       ¦               ¦       CredenciaisInvalidasException.class
+¦       ¦       ¦               ¦       EspException.class
+¦       ¦       ¦               ¦       IaException.class
+¦       ¦       ¦               ¦       OperacaoInvalidaException.class
+¦       ¦       ¦               ¦       RecursoNaoEncontradoException.class
+¦       ¦       ¦               ¦       TentativasExcedidasException.class
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +---model
+¦       ¦       ¦               ¦       DadosProducao.class
+¦       ¦       ¦               ¦       Esteira.class
+¦       ¦       ¦               ¦       PecasRecusadas.class
+¦       ¦       ¦               ¦       Usuario.class
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +---repository
+¦       ¦       ¦               ¦       DadosProducaoRepository.class
+¦       ¦       ¦               ¦       EsteiraRepository.class
+¦       ¦       ¦               ¦       PecasRecusadasRepository.class
+¦       ¦       ¦               ¦       UsuarioRepository.class
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +---security
+¦       ¦       ¦               ¦       LoginLimiter.class
+¦       ¦       ¦               ¦       OperadorResolver.class
+¦       ¦       ¦               ¦       SecurityConfig.class
+¦       ¦       ¦               ¦       TokenAuthFilter.class
+¦       ¦       ¦               ¦       TokenService.class
+¦       ¦       ¦               ¦       UsuarioLogado.class
+¦       ¦       ¦               ¦       
+¦       ¦       ¦               +---service
+¦       ¦       ¦                       AtuadorService.class
+¦       ¦       ¦                       AtuadorServiceImpl.class
+¦       ¦       ¦                       CameraService.class
+¦       ¦       ¦                       EspGateway.class
+¦       ¦       ¦                       EspSerialGateway.class
+¦       ¦       ¦                       EspSimuladoControl.class
+¦       ¦       ¦                       EspSimuladoGateway.class
+¦       ¦       ¦                       EsteiraService.class
+¦       ¦       ¦                       EventoService$Evento.class
+¦       ¦       ¦                       EventoService.class
+¦       ¦       ¦                       InspecaoOrchestratorService.class
+¦       ¦       ¦                       PecasRecusadasService.class
+¦       ¦       ¦                       ProducaoService.class
+¦       ¦       ¦                       SensorPollingService.class
+¦       ¦       ¦                       UsuarioService.class
+¦       ¦       ¦                       
+¦       ¦       +---generated-sources
+¦       ¦       ¦   +---annotations
+¦       ¦       +---generated-test-sources
+¦       ¦       ¦   +---test-annotations
+¦       ¦       +---maven-status
+¦       ¦       ¦   +---maven-compiler-plugin
+¦       ¦       ¦       +---compile
+¦       ¦       ¦       ¦   +---default-compile
+¦       ¦       ¦       ¦           createdFiles.lst
+¦       ¦       ¦       ¦           inputFiles.lst
+¦       ¦       ¦       ¦           
+¦       ¦       ¦       +---testCompile
+¦       ¦       ¦           +---default-testCompile
+¦       ¦       ¦                   createdFiles.lst
+¦       ¦       ¦                   inputFiles.lst
+¦       ¦       ¦                   
+¦       ¦       +---test-classes
+¦       ¦           ¦   application-test.properties
+¦       ¦           ¦   
+¦       ¦           +---com
+¦       ¦               +---pi
+¦       ¦                   +---demo
+¦       ¦                       ¦   DemoApplicationTests.class
+¦       ¦                       ¦   TestSupport$RegistradorGateway$Escrita.class
+¦       ¦                       ¦   TestSupport$RegistradorGateway.class
+¦       ¦                       ¦   TestSupport.class
+¦       ¦                       ¦   
+¦       ¦                       +---security
+¦       ¦                       ¦       LoginLimiterTest.class
+¦       ¦                       ¦       TokenServiceTest.class
+¦       ¦                       ¦       
+¦       ¦                       +---service
+¦       ¦                               AtuadorServiceImplTest.class
+¦       ¦                               EspSimuladoGatewayTest.class
+¦       ¦                               
+¦       +---poc
+¦               ClpSequenciaPoc.java
+¦               
++---docs
+¦       der.png
+¦       der.txt
+¦       esquematico.jpg
+¦       listaMateriais.txt
+¦       README.md
+¦       
++---entrega-captura-lorenzo
+¦   ¦   LEIA-ME-EXECUCAO.md
+¦   ¦   
+¦   +---captura-java
+¦   ¦       CapturaTampinha.java
+¦   ¦       pom.xml
+¦   ¦       
+¦   +---refinador
+¦           Dockerfile
+¦           refinador_tampinhas.py
+¦           requirements.txt
+¦           
++---ia-docker
+    ¦   docker-compose.yml
+    ¦   LEIA-ME-IA.md
+    ¦   
+    +---api
+    ¦       Dockerfile
+    ¦       main.py
+    ¦       modelo_inspecao.tflite
+    ¦       refinador_tampinhas.py
+    ¦       requirements.txt
+    ¦       
+    +---dados
+    ¦   +---aprovada
+    ¦   +---aprovada_refinada
+    ¦   ¦   ¦   tampa_aprovada_20261117_211603_300_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211653_780_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211655_560_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211657_927_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211700_365_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211702_993_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211705_229_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211708_679_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211746_550_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211748_709_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211751_907_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211753_554_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211755_295_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211759_303_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211801_462_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211808_436_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211810_757_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211813_269_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211817_047_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211825_045_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211827_048_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211829_479_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211831_414_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211834_036_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211842_772_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211845_171_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211847_146_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211850_068_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211852_131_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211901_845_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211905_810_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211907_859_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211909_908_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211911_956_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211921_923_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211923_625_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211925_687_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211927_594_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211929_637_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211940_788_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211942_646_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211945_893_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211948_115_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_211949_910_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212004_997_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212007_971_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212011_803_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212013_911_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212015_941_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212017_751_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212027_204_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212028_996_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212031_848_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212034_108_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212036_294_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212043_029_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212045_705_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212048_173_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212049_659_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212101_347_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212103_749_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212105_909_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212108_058_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212109_958_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212111_818_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212119_156_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212121_268_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212123_148_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212125_964_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212136_277_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212138_155_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212139_877_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212142_610_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212145_477_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212159_396_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212202_438_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212204_437_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212206_617_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212208_317_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212209_803_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212220_553_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212222_932_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212224_276_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212226_437_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212229_538_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212231_572_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212244_346_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212248_538_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212251_269_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212253_321_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212254_980_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212258_150_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212308_836_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212310_304_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212312_134_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212314_341_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212316_044_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212317_845_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212327_541_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212330_089_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212331_911_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212333_605_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212335_604_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212337_557_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212349_124_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212350_996_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212353_349_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212355_327_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212357_510_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212359_925_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212411_383_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212414_567_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212416_473_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212419_141_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212421_509_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212423_876_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212436_724_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212439_907_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212442_085_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212445_142_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212447_764_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212449_843_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212458_772_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212500_725_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212503_236_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212505_140_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212515_671_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212517_909_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212519_492_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212521_540_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212523_544_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212538_436_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212540_412_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212542_502_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212544_150_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212546_727_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212549_030_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212609_284_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212611_859_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212615_028_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212616_934_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212619_014_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212621_175_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212641_859_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212644_852_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212647_430_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212649_475_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212651_299_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212653_923_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212702_229_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212704_164_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212706_435_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212708_645_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212722_065_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212724_211_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212727_397_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212729_826_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212732_180_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212734_155_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212747_652_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212750_468_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212753_011_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212755_477_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212757_924_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212809_719_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212811_508_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212813_882_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212816_689_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212838_906_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212843_157_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212845_760_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212848_568_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212851_205_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212904_180_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212906_996_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212909_364_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212912_403_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212928_852_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212932_195_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212935_366_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212938_037_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212940_275_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212953_411_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212955_925_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_212959_363_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213002_498_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213005_727_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213027_122_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213029_749_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213032_675_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213035_701_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213038_244_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213054_421_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213057_603_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213100_946_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213103_731_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213108_564_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213128_802_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213132_914_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213135_892_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213139_125_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213142_881_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213146_177_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213157_265_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213159_983_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213203_137_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213206_246_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213209_552_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213212_252_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213234_680_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213237_956_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213240_676_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213243_044_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213246_243_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213248_915_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213319_578_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213323_273_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213326_730_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213330_683_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213346_211_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213349_170_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213351_843_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213354_418_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213357_392_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213416_299_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213419_193_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213421_707_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213424_681_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213427_608_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213452_321_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213455_152_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213458_175_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213501_693_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213504_045_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213506_880_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213527_163_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213529_672_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213532_420_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213535_814_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213538_580_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213554_293_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213557_686_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213600_352_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213606_573_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213612_524_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213633_765_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213638_021_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213640_277_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213642_967_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213645_643_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213647_875_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213708_224_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213713_055_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213716_825_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213720_059_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213722_776_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213726_266_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213742_134_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213744_599_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213749_565_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213752_180_refinada.png
+    ¦   ¦   ¦   tampa_aprovada_20261117_213754_534_refinada.png
+    ¦   ¦   ¦   
+    ¦   ¦   +---debug
+    ¦   ¦           tampa_aprovada_20261117_211603_300_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211653_780_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211655_560_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211657_927_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211700_365_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211702_993_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211705_229_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211708_679_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211746_550_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211748_709_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211751_907_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211753_554_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211755_295_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211759_303_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211801_462_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211808_436_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211810_757_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211813_269_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211817_047_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211825_045_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211827_048_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211829_479_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211831_414_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211834_036_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211842_772_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211845_171_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211847_146_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211850_068_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211852_131_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211901_845_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211905_810_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211907_859_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211909_908_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211911_956_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211921_923_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211923_625_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211925_687_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211927_594_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211929_637_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211940_788_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211942_646_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211945_893_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211948_115_debug.png
+    ¦   ¦           tampa_aprovada_20261117_211949_910_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212004_997_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212007_971_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212011_803_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212013_911_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212015_941_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212017_751_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212027_204_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212028_996_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212031_848_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212034_108_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212036_294_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212043_029_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212045_705_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212048_173_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212049_659_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212101_347_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212103_749_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212105_909_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212108_058_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212109_958_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212111_818_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212119_156_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212121_268_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212123_148_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212125_964_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212136_277_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212138_155_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212139_877_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212142_610_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212145_477_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212159_396_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212202_438_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212204_437_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212206_617_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212208_317_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212209_803_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212220_553_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212222_932_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212224_276_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212226_437_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212229_538_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212231_572_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212244_346_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212248_538_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212251_269_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212253_321_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212254_980_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212258_150_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212308_836_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212310_304_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212312_134_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212314_341_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212316_044_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212317_845_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212327_541_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212330_089_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212331_911_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212333_605_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212335_604_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212337_557_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212349_124_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212350_996_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212353_349_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212355_327_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212357_510_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212359_925_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212411_383_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212414_567_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212416_473_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212419_141_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212421_509_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212423_876_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212436_724_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212439_907_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212442_085_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212445_142_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212447_764_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212449_843_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212458_772_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212500_725_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212503_236_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212505_140_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212515_671_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212517_909_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212519_492_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212521_540_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212523_544_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212538_436_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212540_412_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212542_502_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212544_150_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212546_727_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212549_030_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212609_284_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212611_859_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212615_028_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212616_934_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212619_014_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212621_175_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212641_859_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212644_852_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212647_430_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212649_475_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212651_299_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212653_923_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212702_229_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212704_164_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212706_435_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212708_645_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212722_065_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212724_211_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212727_397_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212729_826_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212732_180_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212734_155_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212747_652_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212750_468_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212753_011_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212755_477_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212757_924_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212809_719_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212811_508_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212813_882_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212816_689_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212838_906_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212843_157_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212845_760_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212848_568_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212851_205_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212904_180_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212906_996_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212909_364_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212912_403_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212928_852_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212932_195_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212935_366_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212938_037_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212940_275_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212953_411_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212955_925_debug.png
+    ¦   ¦           tampa_aprovada_20261117_212959_363_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213002_498_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213005_727_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213027_122_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213029_749_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213032_675_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213035_701_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213038_244_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213054_421_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213057_603_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213100_946_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213103_731_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213108_564_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213128_802_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213132_914_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213135_892_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213139_125_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213142_881_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213146_177_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213157_265_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213159_983_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213203_137_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213206_246_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213209_552_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213212_252_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213234_680_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213237_956_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213240_676_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213243_044_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213246_243_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213248_915_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213319_578_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213323_273_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213326_730_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213330_683_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213346_211_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213349_170_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213351_843_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213354_418_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213357_392_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213416_299_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213419_193_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213421_707_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213424_681_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213427_608_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213452_321_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213455_152_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213458_175_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213501_693_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213504_045_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213506_880_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213527_163_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213529_672_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213532_420_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213535_814_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213538_580_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213554_293_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213557_686_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213600_352_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213606_573_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213612_524_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213633_765_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213638_021_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213640_277_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213642_967_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213645_643_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213647_875_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213708_224_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213713_055_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213716_825_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213720_059_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213722_776_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213726_266_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213742_134_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213744_599_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213749_565_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213752_180_debug.png
+    ¦   ¦           tampa_aprovada_20261117_213754_534_debug.png
+    ¦   ¦           
+    ¦   +---reprovada
+    ¦   +---reprovada_refinada
+    ¦       ¦   tampa_aprovada_20261117_213923_329_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_213930_493_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_213936_669_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_213941_476_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_213948_889_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_213951_269_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_213953_973_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_213958_808_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214003_684_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214015_219_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214018_287_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214040_353_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214045_769_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214048_696_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214051_318_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214054_386_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214057_973_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214059_750_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214103_237_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214107_299_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214111_106_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214113_611_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214137_810_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214140_906_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214144_167_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214147_016_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214150_424_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214155_964_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214158_424_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214205_474_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214207_060_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214209_619_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214215_935_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214234_729_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214238_999_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214241_231_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214247_591_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214249_607_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214252_549_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214255_497_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214258_532_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214301_759_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214308_181_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214321_375_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214324_092_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214346_890_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214353_255_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214357_991_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214400_688_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214406_979_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214412_690_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214415_360_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214420_393_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214423_679_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214427_143_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214430_878_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214450_257_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214502_348_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214509_108_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214511_667_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214515_914_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214519_028_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214522_962_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214527_344_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214529_600_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214532_536_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214601_766_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214607_572_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214611_035_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214614_771_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214619_600_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214621_600_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214623_608_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214628_927_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214631_103_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214858_905_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214903_802_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214905_504_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214907_580_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214911_653_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214914_249_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214919_180_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214921_762_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214925_143_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214938_303_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214941_171_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214943_844_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214947_889_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214949_442_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214953_420_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_214957_920_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215004_495_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215006_049_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215009_790_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215012_801_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215016_186_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215051_103_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215054_437_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215057_477_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215108_258_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215112_371_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215122_033_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215124_585_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215133_451_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215135_919_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215147_545_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215153_320_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215208_121_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215212_390_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215214_929_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215217_527_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215221_126_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215225_608_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215227_483_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215229_869_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215231_562_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215242_449_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215314_269_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215317_155_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215319_943_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215325_741_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215405_441_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215409_553_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215417_758_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215420_448_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215425_277_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215438_477_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215444_444_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215446_605_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215448_871_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215454_380_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215458_751_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215502_386_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215506_336_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215513_284_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215515_301_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215541_305_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215549_342_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215552_401_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215556_238_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215558_542_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215606_092_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215608_153_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215611_293_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215613_177_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215619_561_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215623_118_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215634_782_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215641_347_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215643_443_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215649_300_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215651_363_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215656_200_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215703_147_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215705_976_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215709_295_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215711_504_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215714_174_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215730_127_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215735_107_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215739_864_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215742_908_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215746_213_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215754_007_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215756_935_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215800_985_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215803_269_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215809_716_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215812_965_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215833_569_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215850_412_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215852_570_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215856_334_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215859_612_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215902_138_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215906_732_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215908_503_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_215912_684_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220007_056_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220010_948_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220013_505_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220017_031_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220021_585_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220025_631_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220033_551_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220040_751_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220430_896_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220434_340_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220437_543_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220507_466_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220539_502_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220545_197_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220552_135_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220555_430_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220557_990_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220651_892_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220655_144_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220659_263_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220705_721_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220716_310_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220719_350_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220724_302_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220726_371_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220731_010_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220736_800_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220739_026_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220741_354_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220743_846_refinada.png
+    ¦       ¦   tampa_aprovada_20261117_220747_076_refinada.png
+    ¦       ¦   
+    ¦       +---debug
+    ¦               tampa_aprovada_20261117_213923_329_debug.png
+    ¦               tampa_aprovada_20261117_213930_493_debug.png
+    ¦               tampa_aprovada_20261117_213936_669_debug.png
+    ¦               tampa_aprovada_20261117_213941_476_debug.png
+    ¦               tampa_aprovada_20261117_213948_889_debug.png
+    ¦               tampa_aprovada_20261117_213951_269_debug.png
+    ¦               tampa_aprovada_20261117_213953_973_debug.png
+    ¦               tampa_aprovada_20261117_213958_808_debug.png
+    ¦               tampa_aprovada_20261117_214003_684_debug.png
+    ¦               tampa_aprovada_20261117_214015_219_debug.png
+    ¦               tampa_aprovada_20261117_214018_287_debug.png
+    ¦               tampa_aprovada_20261117_214040_353_debug.png
+    ¦               tampa_aprovada_20261117_214045_769_debug.png
+    ¦               tampa_aprovada_20261117_214048_696_debug.png
+    ¦               tampa_aprovada_20261117_214051_318_debug.png
+    ¦               tampa_aprovada_20261117_214054_386_debug.png
+    ¦               tampa_aprovada_20261117_214057_973_debug.png
+    ¦               tampa_aprovada_20261117_214059_750_debug.png
+    ¦               tampa_aprovada_20261117_214103_237_debug.png
+    ¦               tampa_aprovada_20261117_214107_299_debug.png
+    ¦               tampa_aprovada_20261117_214111_106_debug.png
+    ¦               tampa_aprovada_20261117_214113_611_debug.png
+    ¦               tampa_aprovada_20261117_214137_810_debug.png
+    ¦               tampa_aprovada_20261117_214140_906_debug.png
+    ¦               tampa_aprovada_20261117_214144_167_debug.png
+    ¦               tampa_aprovada_20261117_214147_016_debug.png
+    ¦               tampa_aprovada_20261117_214150_424_debug.png
+    ¦               tampa_aprovada_20261117_214155_964_debug.png
+    ¦               tampa_aprovada_20261117_214158_424_debug.png
+    ¦               tampa_aprovada_20261117_214205_474_debug.png
+    ¦               tampa_aprovada_20261117_214207_060_debug.png
+    ¦               tampa_aprovada_20261117_214209_619_debug.png
+    ¦               tampa_aprovada_20261117_214215_935_debug.png
+    ¦               tampa_aprovada_20261117_214234_729_debug.png
+    ¦               tampa_aprovada_20261117_214238_999_debug.png
+    ¦               tampa_aprovada_20261117_214241_231_debug.png
+    ¦               tampa_aprovada_20261117_214247_591_debug.png
+    ¦               tampa_aprovada_20261117_214249_607_debug.png
+    ¦               tampa_aprovada_20261117_214252_549_debug.png
+    ¦               tampa_aprovada_20261117_214255_497_debug.png
+    ¦               tampa_aprovada_20261117_214258_532_debug.png
+    ¦               tampa_aprovada_20261117_214301_759_debug.png
+    ¦               tampa_aprovada_20261117_214308_181_debug.png
+    ¦               tampa_aprovada_20261117_214321_375_debug.png
+    ¦               tampa_aprovada_20261117_214324_092_debug.png
+    ¦               tampa_aprovada_20261117_214346_890_debug.png
+    ¦               tampa_aprovada_20261117_214353_255_debug.png
+    ¦               tampa_aprovada_20261117_214357_991_debug.png
+    ¦               tampa_aprovada_20261117_214400_688_debug.png
+    ¦               tampa_aprovada_20261117_214406_979_debug.png
+    ¦               tampa_aprovada_20261117_214412_690_debug.png
+    ¦               tampa_aprovada_20261117_214415_360_debug.png
+    ¦               tampa_aprovada_20261117_214420_393_debug.png
+    ¦               tampa_aprovada_20261117_214423_679_debug.png
+    ¦               tampa_aprovada_20261117_214427_143_debug.png
+    ¦               tampa_aprovada_20261117_214430_878_debug.png
+    ¦               tampa_aprovada_20261117_214450_257_debug.png
+    ¦               tampa_aprovada_20261117_214502_348_debug.png
+    ¦               tampa_aprovada_20261117_214509_108_debug.png
+    ¦               tampa_aprovada_20261117_214511_667_debug.png
+    ¦               tampa_aprovada_20261117_214515_914_debug.png
+    ¦               tampa_aprovada_20261117_214519_028_debug.png
+    ¦               tampa_aprovada_20261117_214522_962_debug.png
+    ¦               tampa_aprovada_20261117_214527_344_debug.png
+    ¦               tampa_aprovada_20261117_214529_600_debug.png
+    ¦               tampa_aprovada_20261117_214532_536_debug.png
+    ¦               tampa_aprovada_20261117_214601_766_debug.png
+    ¦               tampa_aprovada_20261117_214607_572_debug.png
+    ¦               tampa_aprovada_20261117_214611_035_debug.png
+    ¦               tampa_aprovada_20261117_214614_771_debug.png
+    ¦               tampa_aprovada_20261117_214619_600_debug.png
+    ¦               tampa_aprovada_20261117_214621_600_debug.png
+    ¦               tampa_aprovada_20261117_214623_608_debug.png
+    ¦               tampa_aprovada_20261117_214628_927_debug.png
+    ¦               tampa_aprovada_20261117_214631_103_debug.png
+    ¦               tampa_aprovada_20261117_214858_905_debug.png
+    ¦               tampa_aprovada_20261117_214903_802_debug.png
+    ¦               tampa_aprovada_20261117_214905_504_debug.png
+    ¦               tampa_aprovada_20261117_214907_580_debug.png
+    ¦               tampa_aprovada_20261117_214911_653_debug.png
+    ¦               tampa_aprovada_20261117_214914_249_debug.png
+    ¦               tampa_aprovada_20261117_214919_180_debug.png
+    ¦               tampa_aprovada_20261117_214921_762_debug.png
+    ¦               tampa_aprovada_20261117_214925_143_debug.png
+    ¦               tampa_aprovada_20261117_214938_303_debug.png
+    ¦               tampa_aprovada_20261117_214941_171_debug.png
+    ¦               tampa_aprovada_20261117_214943_844_debug.png
+    ¦               tampa_aprovada_20261117_214947_889_debug.png
+    ¦               tampa_aprovada_20261117_214949_442_debug.png
+    ¦               tampa_aprovada_20261117_214953_420_debug.png
+    ¦               tampa_aprovada_20261117_214957_920_debug.png
+    ¦               tampa_aprovada_20261117_215004_495_debug.png
+    ¦               tampa_aprovada_20261117_215006_049_debug.png
+    ¦               tampa_aprovada_20261117_215009_790_debug.png
+    ¦               tampa_aprovada_20261117_215012_801_debug.png
+    ¦               tampa_aprovada_20261117_215016_186_debug.png
+    ¦               tampa_aprovada_20261117_215051_103_debug.png
+    ¦               tampa_aprovada_20261117_215054_437_debug.png
+    ¦               tampa_aprovada_20261117_215057_477_debug.png
+    ¦               tampa_aprovada_20261117_215108_258_debug.png
+    ¦               tampa_aprovada_20261117_215112_371_debug.png
+    ¦               tampa_aprovada_20261117_215122_033_debug.png
+    ¦               tampa_aprovada_20261117_215124_585_debug.png
+    ¦               tampa_aprovada_20261117_215133_451_debug.png
+    ¦               tampa_aprovada_20261117_215135_919_debug.png
+    ¦               tampa_aprovada_20261117_215147_545_debug.png
+    ¦               tampa_aprovada_20261117_215153_320_debug.png
+    ¦               tampa_aprovada_20261117_215208_121_debug.png
+    ¦               tampa_aprovada_20261117_215212_390_debug.png
+    ¦               tampa_aprovada_20261117_215214_929_debug.png
+    ¦               tampa_aprovada_20261117_215217_527_debug.png
+    ¦               tampa_aprovada_20261117_215221_126_debug.png
+    ¦               tampa_aprovada_20261117_215225_608_debug.png
+    ¦               tampa_aprovada_20261117_215227_483_debug.png
+    ¦               tampa_aprovada_20261117_215229_869_debug.png
+    ¦               tampa_aprovada_20261117_215231_562_debug.png
+    ¦               tampa_aprovada_20261117_215242_449_debug.png
+    ¦               tampa_aprovada_20261117_215314_269_debug.png
+    ¦               tampa_aprovada_20261117_215317_155_debug.png
+    ¦               tampa_aprovada_20261117_215319_943_debug.png
+    ¦               tampa_aprovada_20261117_215325_741_debug.png
+    ¦               tampa_aprovada_20261117_215405_441_debug.png
+    ¦               tampa_aprovada_20261117_215409_553_debug.png
+    ¦               tampa_aprovada_20261117_215417_758_debug.png
+    ¦               tampa_aprovada_20261117_215420_448_debug.png
+    ¦               tampa_aprovada_20261117_215425_277_debug.png
+    ¦               tampa_aprovada_20261117_215438_477_debug.png
+    ¦               tampa_aprovada_20261117_215444_444_debug.png
+    ¦               tampa_aprovada_20261117_215446_605_debug.png
+    ¦               tampa_aprovada_20261117_215448_871_debug.png
+    ¦               tampa_aprovada_20261117_215454_380_debug.png
+    ¦               tampa_aprovada_20261117_215458_751_debug.png
+    ¦               tampa_aprovada_20261117_215502_386_debug.png
+    ¦               tampa_aprovada_20261117_215506_336_debug.png
+    ¦               tampa_aprovada_20261117_215513_284_debug.png
+    ¦               tampa_aprovada_20261117_215515_301_debug.png
+    ¦               tampa_aprovada_20261117_215541_305_debug.png
+    ¦               tampa_aprovada_20261117_215549_342_debug.png
+    ¦               tampa_aprovada_20261117_215552_401_debug.png
+    ¦               tampa_aprovada_20261117_215556_238_debug.png
+    ¦               tampa_aprovada_20261117_215558_542_debug.png
+    ¦               tampa_aprovada_20261117_215606_092_debug.png
+    ¦               tampa_aprovada_20261117_215608_153_debug.png
+    ¦               tampa_aprovada_20261117_215611_293_debug.png
+    ¦               tampa_aprovada_20261117_215613_177_debug.png
+    ¦               tampa_aprovada_20261117_215619_561_debug.png
+    ¦               tampa_aprovada_20261117_215623_118_debug.png
+    ¦               tampa_aprovada_20261117_215634_782_debug.png
+    ¦               tampa_aprovada_20261117_215641_347_debug.png
+    ¦               tampa_aprovada_20261117_215643_443_debug.png
+    ¦               tampa_aprovada_20261117_215649_300_debug.png
+    ¦               tampa_aprovada_20261117_215651_363_debug.png
+    ¦               tampa_aprovada_20261117_215656_200_debug.png
+    ¦               tampa_aprovada_20261117_215703_147_debug.png
+    ¦               tampa_aprovada_20261117_215705_976_debug.png
+    ¦               tampa_aprovada_20261117_215709_295_debug.png
+    ¦               tampa_aprovada_20261117_215711_504_debug.png
+    ¦               tampa_aprovada_20261117_215714_174_debug.png
+    ¦               tampa_aprovada_20261117_215730_127_debug.png
+    ¦               tampa_aprovada_20261117_215735_107_debug.png
+    ¦               tampa_aprovada_20261117_215739_864_debug.png
+    ¦               tampa_aprovada_20261117_215742_908_debug.png
+    ¦               tampa_aprovada_20261117_215746_213_debug.png
+    ¦               tampa_aprovada_20261117_215754_007_debug.png
+    ¦               tampa_aprovada_20261117_215756_935_debug.png
+    ¦               tampa_aprovada_20261117_215800_985_debug.png
+    ¦               tampa_aprovada_20261117_215803_269_debug.png
+    ¦               tampa_aprovada_20261117_215809_716_debug.png
+    ¦               tampa_aprovada_20261117_215812_965_debug.png
+    ¦               tampa_aprovada_20261117_215833_569_debug.png
+    ¦               tampa_aprovada_20261117_215850_412_debug.png
+    ¦               tampa_aprovada_20261117_215852_570_debug.png
+    ¦               tampa_aprovada_20261117_215856_334_debug.png
+    ¦               tampa_aprovada_20261117_215859_612_debug.png
+    ¦               tampa_aprovada_20261117_215902_138_debug.png
+    ¦               tampa_aprovada_20261117_215906_732_debug.png
+    ¦               tampa_aprovada_20261117_215908_503_debug.png
+    ¦               tampa_aprovada_20261117_215912_684_debug.png
+    ¦               tampa_aprovada_20261117_220007_056_debug.png
+    ¦               tampa_aprovada_20261117_220010_948_debug.png
+    ¦               tampa_aprovada_20261117_220013_505_debug.png
+    ¦               tampa_aprovada_20261117_220017_031_debug.png
+    ¦               tampa_aprovada_20261117_220021_585_debug.png
+    ¦               tampa_aprovada_20261117_220025_631_debug.png
+    ¦               tampa_aprovada_20261117_220033_551_debug.png
+    ¦               tampa_aprovada_20261117_220040_751_debug.png
+    ¦               tampa_aprovada_20261117_220430_896_debug.png
+    ¦               tampa_aprovada_20261117_220434_340_debug.png
+    ¦               tampa_aprovada_20261117_220437_543_debug.png
+    ¦               tampa_aprovada_20261117_220507_466_debug.png
+    ¦               tampa_aprovada_20261117_220539_502_debug.png
+    ¦               tampa_aprovada_20261117_220545_197_debug.png
+    ¦               tampa_aprovada_20261117_220552_135_debug.png
+    ¦               tampa_aprovada_20261117_220555_430_debug.png
+    ¦               tampa_aprovada_20261117_220557_990_debug.png
+    ¦               tampa_aprovada_20261117_220651_892_debug.png
+    ¦               tampa_aprovada_20261117_220655_144_debug.png
+    ¦               tampa_aprovada_20261117_220659_263_debug.png
+    ¦               tampa_aprovada_20261117_220705_721_debug.png
+    ¦               tampa_aprovada_20261117_220716_310_debug.png
+    ¦               tampa_aprovada_20261117_220719_350_debug.png
+    ¦               tampa_aprovada_20261117_220724_302_debug.png
+    ¦               tampa_aprovada_20261117_220726_371_debug.png
+    ¦               tampa_aprovada_20261117_220731_010_debug.png
+    ¦               tampa_aprovada_20261117_220736_800_debug.png
+    ¦               tampa_aprovada_20261117_220739_026_debug.png
+    ¦               tampa_aprovada_20261117_220741_354_debug.png
+    ¦               tampa_aprovada_20261117_220743_846_debug.png
+    ¦               tampa_aprovada_20261117_220747_076_debug.png
+    ¦               
+    +---modelos
+    ¦       LEIA-ME.txt
+    ¦       metricas_treino.json
+    ¦       modelo_inspecao.tflite
+    ¦       
+    +---treinamento
+            Dockerfile
+            preparar_modelo.py
+            refinador_tampinhas.py
+            requirements.txt
+            treinar_modelo.py
+            

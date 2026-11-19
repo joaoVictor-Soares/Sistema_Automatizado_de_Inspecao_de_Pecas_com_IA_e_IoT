@@ -1,0 +1,75 @@
+treino-1  | 2026-11-19 17:02:22,647 Refinando fotos pendentes em /dados ...
+treino-1  | 2026-11-19 17:02:22,667 Fotos refinadas agora: 0
+treino-1  | 2026-11-19 17:02:23,356 Imagens refinadas por classe: {'aprovadas': 262, 'reprovadas': 209}
+treino-1  | 2026-11-19 17:02:23,359 Treinando com 471 imagens (25 epocas)...
+treino-1  | Lendo imagens de: /dados
+treino-1  |   aprovadas    262 imagens em /dados/aprovada_refinada
+treino-1  |   reprovadas   209 imagens em /dados/reprovada_refinada
+treino-1  | 2026-11-19 17:02:24.008049: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+treino-1  | /usr/local/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+treino-1  |   self.data_adapter = data_adapters.get_data_adapter(
+treino-1  | Epoch 1/25
+treino-1  | 12/12 - 32s - 3s/step - accuracy: 0.7109 - loss: 0.5454 - val_accuracy: 0.4043 - val_loss: 0.7195 - learning_rate: 0.0010
+treino-1  | Epoch 2/25
+treino-1  | 12/12 - 36s - 3s/step - accuracy: 0.7931 - loss: 0.4379 - val_accuracy: 0.4043 - val_loss: 0.8801 - learning_rate: 0.0010
+treino-1  | Epoch 3/25
+treino-1  | 12/12 - 68s - 6s/step - accuracy: 0.7958 - loss: 0.4183 - val_accuracy: 0.4043 - val_loss: 1.0671 - learning_rate: 0.0010
+treino-1  | Epoch 4/25
+treino-1  | 12/12 - 83s - 7s/step - accuracy: 0.8170 - loss: 0.3873 - val_accuracy: 0.4043 - val_loss: 1.1190 - learning_rate: 0.0010
+treino-1  | Epoch 5/25
+treino-1  | 12/12 - 48s - 4s/step - accuracy: 0.8249 - loss: 0.3628 - val_accuracy: 0.4043 - val_loss: 1.1241 - learning_rate: 5.0000e-04
+treino-1  | Epoch 6/25
+treino-1  | 12/12 - 30s - 2s/step - accuracy: 0.8568 - loss: 0.3296 - val_accuracy: 0.4043 - val_loss: 1.2084 - learning_rate: 5.0000e-04
+treino-1  | Epoch 7/25
+treino-1  | 12/12 - 31s - 3s/step - accuracy: 0.8488 - loss: 0.3301 - val_accuracy: 0.4043 - val_loss: 1.0652 - learning_rate: 5.0000e-04
+treino-1  | 
+treino-1  | Matriz de confusao (linhas = real, colunas = previsto):
+treino-1  |                  aprovadas   reprovadas
+treino-1  |    aprovadas             0           56
+treino-1  |   reprovadas             0           38
+treino-1  | Acuracia na validacao: 40.43%
+treino-1  | 2026-11-19 17:07:56,052 Assets written to: /tmp/tmpt00f8e_r/assets
+treino-1  | INFO:tensorflow:Assets written to: /tmp/tmpt00f8e_r/assets
+treino-1  | Saved artifact at '/tmp/tmpt00f8e_r'. The following endpoints are available:
+treino-1  | 
+treino-1  | * Endpoint 'serve'
+treino-1  |   args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 180, 180, 3), dtype=tf.float32, name='keras_tensor')
+treino-1  | Output Type:
+treino-1  |   TensorSpec(shape=(None, 2), dtype=tf.float32, name=None)
+treino-1  | Captures:
+treino-1  |   139838295577168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295578896: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295579280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295579472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295577360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295577744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295578320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295578128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295577552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295579664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295577936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295580048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295578704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295579856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295582928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295583120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295582352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295581008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295583312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295583696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295584080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295585040: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295584848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295584272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295585424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  |   139838295585232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+treino-1  | WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+treino-1  | W0000 00:00:1795108076.444054       1 tf_tfl_flatbuffer_helpers.cc:364] Ignored output_format.
+treino-1  | W0000 00:00:1795108076.444170       1 tf_tfl_flatbuffer_helpers.cc:367] Ignored drop_control_dependency.
+treino-1  | I0000 00:00:1795108076.474077       1 mlir_graph_optimization_pass.cc:437] MLIR V1 optimization pass is not enabled
+treino-1  | 
+treino-1  | Modelo TFLite salvo em: /modelos/modelo_inspecao.tflite (1.0 MB)
+treino-1  | Metricas em: /modelos/metricas_treino.json
+treino-1  | 
+treino-1  | PROXIMO PASSO: teste o novo modelo antes de substituir o atual (ver LEIA-ME-IA.md).
+treino-1  | 2026-11-19 17:07:57,144 Modelo pronto: /modelos/modelo_inspecao.tflite
