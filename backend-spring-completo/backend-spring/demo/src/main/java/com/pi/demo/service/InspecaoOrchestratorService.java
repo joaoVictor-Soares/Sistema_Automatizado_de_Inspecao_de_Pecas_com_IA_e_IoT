@@ -109,6 +109,38 @@ public class InspecaoOrchestratorService {
         }
     }
 
+    /**
+     * Entrada da coleta automatica: o frame ja foi capturado quando a tampa estava na demarcacao.
+     * Entra na mesma fila FIFO e segue o mesmo caminho (IA -> reprova -> NOK + banco).
+     */
+    public void enfileirarImagem(String origem, byte[] imagem) {
+        if (imagem == null || imagem.length == 0) {
+            throw new OperacaoInvalidaException("Imagem vazia.");
+        }
+        final long gatilhoNs = System.nanoTime();
+        if (pendentes.incrementAndGet() > props.filaMaxima()) {
+            pendentes.decrementAndGet();
+            String msg = "Fila de inspecao cheia (" + props.filaMaxima() + "): peca '" + origem + "' descartada.";
+            log.warn(msg);
+            eventos.publicar("FILA_CHEIA", EventoService.AVISO, msg);
+            return;
+        }
+        try {
+            inspecaoExecutor.submit(() -> {
+                try {
+                    inspecionar(origem, true, null, imagem, gatilhoNs);
+                } catch (RuntimeException e) {
+                    log.error("Inspecao '{}' falhou: {}", origem, e.getMessage(), e);
+                } finally {
+                    pendentes.decrementAndGet();
+                }
+            });
+        } catch (RejectedExecutionException e) {
+            pendentes.decrementAndGet();
+            log.warn("Executor de inspecao encerrado; peca '{}' ignorada.", origem);
+        }
+    }
+
     /** Disparo manual (captura da camera). Sincrono: devolve o resultado. */
     public ResultadoInspecaoDto inspecionarAgora(boolean atuar, Integer operadorId) {
         return executarSincrono("MANUAL", atuar, operadorId, null);

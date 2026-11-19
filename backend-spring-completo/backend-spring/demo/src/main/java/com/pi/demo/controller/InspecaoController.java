@@ -11,20 +11,50 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.pi.demo.dto.InspecaoStatusDto;
 import com.pi.demo.dto.ResultadoInspecaoDto;
+import com.pi.demo.dto.VerificacaoDto;
 import com.pi.demo.security.OperadorResolver;
+import com.pi.demo.service.ColetaAutomaticaService;
 import com.pi.demo.service.InspecaoOrchestratorService;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/inspecao")
 public class InspecaoController {
 
     private final InspecaoOrchestratorService orquestrador;
+    private final ColetaAutomaticaService coleta;
 
-    public InspecaoController(InspecaoOrchestratorService orquestrador) {
+    public InspecaoController(InspecaoOrchestratorService orquestrador, ColetaAutomaticaService coleta) {
         this.orquestrador = orquestrador;
+        this.coleta = coleta;
+    }
+
+    /** Varredura de inicializacao: camera, ESP e API de IA. Nao inicia a coleta. */
+    @GetMapping("/verificacao")
+    public VerificacaoDto verificacao() {
+        return coleta.verificar();
+    }
+
+    /** Inicia a coleta automatica depois da confirmacao (confirmar=true). Recusa se algo estiver offline. */
+    @PostMapping("/iniciar")
+    public VerificacaoDto iniciar(@RequestParam(defaultValue = "false") boolean confirmar) {
+        return coleta.iniciar(confirmar);
+    }
+
+    /** Encerra a coleta automatica. */
+    @PostMapping("/parar")
+    public Map<String, Object> parar() {
+        coleta.parar();
+        return Map.of("estado", coleta.estado());
+    }
+
+    /** Estado da coleta automatica (PARADO ou MONITORANDO) e contagem de pecas enviadas a IA. */
+    @GetMapping("/coleta")
+    public Map<String, Object> estadoColeta() {
+        return Map.of("estado", coleta.estado(), "pecasDetectadas", coleta.pecasDetectadas());
     }
 
     @GetMapping("/status")
