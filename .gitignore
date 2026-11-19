@@ -1,0 +1,6 @@
+
+# Build e binarios (E7/E14)
+target/
+out/
+libs/
+*.class

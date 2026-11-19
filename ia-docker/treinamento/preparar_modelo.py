@@ -15,6 +15,7 @@ Variaveis de ambiente:
 import json
 import logging
 import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -73,17 +74,50 @@ def main() -> int:
         log.info("Modelo ja treinado com estas imagens (%s). Nada a fazer.", saida)
         return 0
 
-    log.info("Treinando com %d imagens (%d epocas)...", sum(contagem.values()), int(epocas))
+    log.info("Treinando candidato com %d imagens (%d epocas)...", sum(contagem.values()), int(epocas))
     try:
         treino.main(["--dados", str(dados), "--saida", str(saida), "--epocas", epocas])
     except SystemExit as e:
-        log.warning("Treino nao executado: %s. A API usara o modelo embutido.", e)
+        log.warning("Treino nao executado: %s.", e)
         return 0
     except Exception:
-        log.exception("Falha no treino. A API usara o modelo embutido.")
+        log.exception("Falha no treino.")
         return 0
-    log.info("Modelo pronto: %s", saida)
+
+    # E4: portao de qualidade. So o candidato que passa vira modelo de producao.
+    producao = Path(os.getenv("MODELO_PRODUCAO", "/modelos/modelo_producao.tflite"))
+    aprovado, motivo = portao_de_qualidade(metricas)
+    if not aprovado:
+        log.warning("Candidato REPROVADO no portao (%s). Producao nao foi alterada: %s", motivo, producao)
+        return 0
+    shutil.copyfile(saida, producao)
+    log.info("Candidato aprovado (%s). Promovido para producao: %s", motivo, producao)
     return 0
+
+
+# Criterios do portao (podem ser ajustados por variavel de ambiente)
+ACURACIA_MINIMA = float(os.getenv("PORTAO_ACURACIA_MINIMA", "0.85"))
+RECALL_MINIMO = float(os.getenv("PORTAO_RECALL_MINIMO", "0.75"))
+
+
+def portao_de_qualidade(metricas: Path):
+    """Le metricas_treino.json e decide se o candidato pode ir para producao."""
+    try:
+        m = json.loads(metricas.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        return False, f"metricas ilegiveis: {e}"
+    acuracia = float(m.get("acuracia_validacao", 0))
+    matriz = m.get("matriz_confusao") or []
+    if len(matriz) != len(treino.CLASSES):
+        return False, "matriz de confusao invalida"
+    recalls = []
+    for i, linha in enumerate(matriz):
+        total = sum(linha)
+        recalls.append(linha[i] / total if total else 0.0)
+    motivo = f"acuracia {acuracia:.2%}, recall minimo {min(recalls):.2%}"
+    if acuracia < ACURACIA_MINIMA or min(recalls) < RECALL_MINIMO:
+        return False, motivo + f" (exigido: acuracia >= {ACURACIA_MINIMA:.0%}, recall >= {RECALL_MINIMO:.0%})"
+    return True, motivo
 
 
 if __name__ == "__main__":

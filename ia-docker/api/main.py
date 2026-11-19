@@ -34,8 +34,7 @@ except ImportError:
 # ---------------------------------------------------------------------------
 # Configuração
 # ---------------------------------------------------------------------------
-MODEL_PATH = os.getenv("MODEL_PATH", "/modelos/modelo_inspecao.tflite")  # treinado pelo servico "treino"
-MODELO_EMBUTIDO = "modelo_inspecao.tflite"  # modelo de referencia, dentro da imagem
+MODEL_PATH = os.getenv("MODEL_PATH", "/modelos/modelo_producao.tflite")  # so modelo validado (promovido pelo portao)
 REFINAR = os.getenv("REFINAR", "true").lower() in ("1", "true", "sim", "yes")
 TAMANHO_REFINO = 512   # saída do refinador antes da classificação
 IMG_HEIGHT = 180
@@ -66,13 +65,14 @@ state = ModelState()
 # Ciclo de vida: carrega o modelo UMA vez na inicialização
 # ---------------------------------------------------------------------------
 def escolher_modelo() -> str:
-    """Usa o modelo treinado com as suas fotos, se existir; senao, o modelo embutido."""
+    """E2: a API so sobe com um modelo de producao validado. Nao ha fallback para modelo
+    nao avaliado. Para gerar o modelo: docker compose run --rm -e TREINAR_AO_SUBIR=true treino
+    (o portao de qualidade do treino promove o candidato para MODEL_PATH)."""
     if os.path.exists(MODEL_PATH):
         return MODEL_PATH
-    if os.path.exists(MODELO_EMBUTIDO):
-        print(f"AVISO: {MODEL_PATH} nao existe. Usando o modelo embutido ({MODELO_EMBUTIDO}).")
-        return MODELO_EMBUTIDO
-    raise RuntimeError("Nenhum modelo encontrado (nem treinado, nem embutido).")
+    raise RuntimeError(
+        f"Modelo de producao nao encontrado em {MODEL_PATH}. A API nao sobe sem modelo validado. "
+        "Treine e promova um candidato que passe no portao de qualidade (ver LEIA-ME-IA.md).")
 
 
 @asynccontextmanager

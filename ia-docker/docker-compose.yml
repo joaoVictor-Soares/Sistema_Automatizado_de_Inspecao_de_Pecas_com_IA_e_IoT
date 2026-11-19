@@ -10,8 +10,12 @@ services:
       - ./dados:/dados
       - ./modelos:/modelos
     environment:
-      TREINAR_AO_SUBIR: "true"
+      # E1: nao treina ao subir. Treino so sob demanda:
+      #   docker compose run --rm -e TREINAR_AO_SUBIR=true treino
+      TREINAR_AO_SUBIR: "false"
       EPOCAS: "25"
+      MODELO_SAIDA: /modelos/candidato.tflite      # candidato: so vira producao se passar no portao
+      MODELO_PRODUCAO: /modelos/modelo_producao.tflite
     restart: "no"
 
   api:
@@ -22,7 +26,8 @@ services:
     volumes:
       - ./modelos:/modelos:ro
     environment:
-      MODEL_PATH: /modelos/modelo_inspecao.tflite
+      # E2: a API so le o modelo de producao (nunca o candidato).
+      MODEL_PATH: /modelos/modelo_producao.tflite
       REFINAR: "true"
     depends_on:
       treino:

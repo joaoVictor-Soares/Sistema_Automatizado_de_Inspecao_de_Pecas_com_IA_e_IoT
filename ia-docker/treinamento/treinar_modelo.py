@@ -80,12 +80,19 @@ def montar_datasets(caminhos, rotulos, val_frac, lote, seed):
 
 
 def criar_modelo():
+    """MobileNetV2 com pesos ImageNet e base CONGELADA (transfer learning).
+
+    A base fica em modo de inferencia (BatchNorm nao atualiza), o que evita o colapso
+    observado com a CNN pequena do treino anterior. So a cabeca de classificacao treina.
+    Entrada: float32 0-255 (o pre-processamento da MobileNetV2 e feito dentro do modelo).
+    """
     entrada = tf.keras.Input((IMG, IMG, 3))
-    x = tf.keras.layers.Rescaling(1.0 / 255.0)(entrada)  # mesmo contrato do modelo atual
-    for filtros in (32, 64, 128, 128):
-        x = tf.keras.layers.Conv2D(filtros, 3, padding="same", activation="relu")(x)
-        x = tf.keras.layers.BatchNormalization()(x)
-        x = tf.keras.layers.MaxPooling2D()(x)
+    # 0-255 -> [-1, 1], que e o que a MobileNetV2 espera; mantem o contrato da API
+    x = tf.keras.layers.Rescaling(1.0 / 127.5, offset=-1.0)(entrada)
+    base = tf.keras.applications.MobileNetV2(
+        input_shape=(IMG, IMG, 3), include_top=False, weights="imagenet")
+    base.trainable = False
+    x = base(x, training=False)
     x = tf.keras.layers.GlobalAveragePooling2D()(x)
     x = tf.keras.layers.Dropout(0.3)(x)
     saida = tf.keras.layers.Dense(len(CLASSES), activation="softmax")(x)

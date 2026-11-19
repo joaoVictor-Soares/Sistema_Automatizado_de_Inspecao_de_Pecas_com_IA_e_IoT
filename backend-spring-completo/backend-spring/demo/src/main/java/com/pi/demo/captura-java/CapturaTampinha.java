@@ -139,12 +139,14 @@ public class CapturaTampinha {
         }
 
         Esp esp = null;
-        if (cfg.backend == null && !cfg.semEsp) {
+        // E8: em producao so o backend aciona o cilindro. O Java so abre a serial com --acionar-direto
+        // (teste de bancada); assim a porta COM7 tem um unico dono.
+        if (cfg.backend == null && !cfg.semEsp && cfg.acionarDireto) {
             esp = new Esp(cfg.porta, cfg.baud);
             esp.abrir();
-            System.out.println("[ESP] conectado em " + cfg.porta + " a " + cfg.baud + " bps");
+            System.out.println("[ESP] ACIONAMENTO DIRETO habilitado em " + cfg.porta + " a " + cfg.baud + " bps");
         } else {
-            System.out.println("[ESP] desativado (modo backend ou --sem-esp): o Java nao aciona o cilindro");
+            System.out.println("[ESP] desativado: o Java nao aciona o cilindro (use --acionar-direto para teste direto)");
         }
 
         ScheduledExecutorService agenda = Executors.newSingleThreadScheduledExecutor(r -> {
@@ -712,6 +714,7 @@ public class CapturaTampinha {
         String email = null;
         String senha = null;
         boolean atuar = true;    // modo backend: o backend pode acionar o cilindro
+        boolean acionarDireto = false; // E8: abre a serial e envia NOK direto (so bancada, nunca em producao)
 
         static Config ler(String[] args) {
             Config c = new Config();
@@ -738,12 +741,16 @@ public class CapturaTampinha {
                     case "--email": c.email = proximo(args, ++i, a); break;
                     case "--senha": c.senha = proximo(args, ++i, a); break;
                     case "--atuar": c.atuar = Boolean.parseBoolean(proximo(args, ++i, a)); break;
+                    case "--acionar-direto": c.acionarDireto = true; break;
                     case "--ajuda":
                     case "-h":
                         c.ajuda = true; break;
                     default:
                         throw new IllegalArgumentException("argumento desconhecido: " + a + " (use --ajuda)");
                 }
+            }
+            if (c.backend != null && c.acionarDireto) {
+                throw new IllegalArgumentException("--acionar-direto nao pode ser usado com --backend (um unico dono do cilindro)");
             }
             if (c.backend != null && (c.email == null || c.senha == null)) {
                 throw new IllegalArgumentException("--backend exige --email e --senha");
@@ -767,6 +774,7 @@ public class CapturaTampinha {
         System.out.println("  --porta COM7            porta do ESP8266 (padrao COM7; Linux: /dev/ttyUSB0)");
         System.out.println("  --baud 115200           taxa do firmware mesa-de-lorenzo (padrao 115200)");
         System.out.println("  --sem-esp               nao abre a serial (reprovadas nao acionam o cilindro)");
+        System.out.println("  --acionar-direto        abre a serial e envia NOK direto (so bancada; nunca com --backend)");
         System.out.println("  --padrao a|r            rotulo se nao digitar nada na janela (padrao a)");
         System.out.println("  --janela-rotulo-ms N    tempo para digitar o rotulo (padrao 1500)");
         System.out.println("  --atraso-nok-ms N       atraso entre a foto e o NOK (padrao 4000) - CALIBRAR NA MESA");

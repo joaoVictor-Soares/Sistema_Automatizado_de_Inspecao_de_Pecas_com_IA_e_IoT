@@ -284,6 +284,11 @@ public class InspecaoOrchestratorService {
     private void agendarRejeicao(long gatilhoNs) {
         long decorridoMs = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - gatilhoNs);
         long atrasoMs = Math.max(0, props.atrasoAtuacao().toMillis() - decorridoMs);
+        if (atrasoMs == 0) {
+            // E12: a IA demorou mais que o atraso configurado; o NOK sai imediatamente e a peca pode ja ter passado.
+            log.warn("Latencia da IA ({} ms) maior que inspecao.atraso-atuacao ({} ms): NOK sem espera.",
+                    decorridoMs, props.atrasoAtuacao().toMillis());
+        }
         try {
             atuacaoExecutor.schedule(this::rejeitar, atrasoMs, TimeUnit.MILLISECONDS);
         } catch (RejectedExecutionException e) {

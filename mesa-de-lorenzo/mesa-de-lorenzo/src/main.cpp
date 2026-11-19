@@ -46,13 +46,19 @@ void setup() {
 }
 
 // ---------------------------------------------------------------------------
-// Comando NOK: aciona a saída 0 por 3 segundos (não bloqueante)
+// Comando NOK: aciona a saída 0 pelo tempo informado (não bloqueante)
+//   "NOK"        -> tempo padrão (TEMPO_NOK_PADRAO_MS)
+//   "NOK:<ms>"   -> tempo enviado pelo backend (esp.tempo-acionamento-inicial-ms / configuração)
+// O tempo tem um único dono: o backend. O firmware só limita a faixa de segurança.
 // ---------------------------------------------------------------------------
-constexpr uint8_t  SAIDA_NOK       = 0;
-constexpr uint32_t TEMPO_NOK_MS    = 5000;
+constexpr uint8_t  SAIDA_NOK          = 0;
+constexpr uint32_t TEMPO_NOK_PADRAO_MS = 5000;
+constexpr uint32_t TEMPO_NOK_MIN_MS    = 100;
+constexpr uint32_t TEMPO_NOK_MAX_MS    = 60000;
 
-static bool     nokAtivo   = false;
-static uint32_t nokInicio  = 0;
+static bool     nokAtivo     = false;
+static uint32_t nokInicio    = 0;
+static uint32_t nokDuracaoMs = TEMPO_NOK_PADRAO_MS;
 static String   bufferSerial;
 
 void ligarSaida(uint8_t saida)    { atualizarSaidas(estadoSaidas | (1 << saida)); }
@@ -63,11 +69,23 @@ void tratarComando(String cmd) {
   cmd.toUpperCase();
   if (cmd.length() == 0) return;
 
-  if (cmd == "NOK") {
+  if (cmd == "NOK" || cmd.startsWith("NOK:")) {
+    uint32_t ms = TEMPO_NOK_PADRAO_MS;
+    if (cmd.startsWith("NOK:")) {
+      long informado = cmd.substring(4).toInt();
+      if (informado <= 0) {
+        Serial.println(F("NOK invalido: tempo deve ser maior que zero"));
+        return;
+      }
+      ms = constrain((uint32_t)informado, TEMPO_NOK_MIN_MS, TEMPO_NOK_MAX_MS);
+    }
     ligarSaida(SAIDA_NOK);
-    nokAtivo  = true;
-    nokInicio = millis();  // novo NOK durante o acionamento reinicia os 3 s
-    Serial.println(F("NOK recebido: saida 0 acionada por 3 s"));
+    nokAtivo     = true;
+    nokInicio    = millis();  // novo NOK durante o acionamento reinicia a contagem
+    nokDuracaoMs = ms;
+    Serial.print(F("NOK recebido: saida 0 acionada por "));
+    Serial.print(ms);
+    Serial.println(F(" ms"));
   } else {
     Serial.print(F("Comando desconhecido: "));
     Serial.println(cmd);
@@ -87,7 +105,7 @@ void lerSerial() {
 }
 
 void atualizarTemporizadorNok() {
-  if (nokAtivo && (millis() - nokInicio >= TEMPO_NOK_MS)) {
+  if (nokAtivo && (millis() - nokInicio >= nokDuracaoMs)) {
     desligarSaida(SAIDA_NOK);
     nokAtivo = false;
     Serial.println(F("Saida 0 desacionada"));
