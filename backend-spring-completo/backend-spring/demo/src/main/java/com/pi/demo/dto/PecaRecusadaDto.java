@@ -21,7 +21,7 @@ public record PecaRecusadaDto(
                 p.getEsteira().getId(),
                 p.getOperador() == null ? null : p.getOperador().getId(),
                 p.getDataHora(),
-                p.getImagemUrl() == null ? null : "/api/pecas-recusadas/" + p.getId() + "/imagem",
+                (p.getImagem() == null && p.getImagemUrl() == null) ? null : "/api/pecas-recusadas/" + p.getId() + "/imagem",
                 p.getErroIdentificado(),
                 p.getNivelAcuracia());
     }

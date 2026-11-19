@@ -33,6 +33,11 @@ public class PecasRecusadas {
     @Column(name = "data_hora")
     private LocalDateTime dataHora;
 
+    /** Imagem da peca reprovada, gravada no proprio banco (bytea no PostgreSQL). */
+    @Column(name = "imagem")
+    private byte[] imagem;
+
+    /** Legado: caminho em disco (registros gravados antes da migracao para o banco). */
     @Column(name = "imagem_url")
     private String imagemUrl;
 

@@ -20,7 +20,7 @@ from contextlib import asynccontextmanager
 
 import cv2
 import numpy as np
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile
+from fastapi import FastAPI, File, HTTPException, UploadFile
 from pydantic import BaseModel
 
 from refinador_tampinhas import refinar
@@ -90,17 +90,6 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="API de Inspeção de Peças", version="1.1.0", lifespan=lifespan)
-
-
-@app.middleware("http")
-async def registrar_requisicao(request: Request, call_next):
-    """DIAGNOSTICO TEMPORARIO: mostra o cabecalho de cada /predict que chega (ver log do container)."""
-    if request.url.path.startswith("/predict"):
-        print(f"[REQ] {request.method} {request.url.path} "
-              f"content-type={request.headers.get('content-type')} "
-              f"content-length={request.headers.get('content-length')} "
-              f"transfer-encoding={request.headers.get('transfer-encoding')}", flush=True)
-    return await call_next(request)
 
 
 # ---------------------------------------------------------------------------
