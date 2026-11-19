@@ -74,7 +74,7 @@ public class InspecaoController {
      * Sem operadorId, usa o usuario autenticado.
      */
     @PostMapping("/disparar")
-    public ResultadoInspecaoDto disparar(@RequestParam(defaultValue = "true") boolean atuar,
+    public ResultadoInspecaoDto disparar(@RequestParam(defaultValue = "false") boolean atuar,
                                          @RequestParam(required = false) Integer operadorId,
                                          Principal principal) {
         return orquestrador.inspecionarAgora(atuar, OperadorResolver.operadorId(principal, operadorId));

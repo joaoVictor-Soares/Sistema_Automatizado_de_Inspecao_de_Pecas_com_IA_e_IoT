@@ -20,16 +20,17 @@ import jakarta.annotation.PreDestroy;
  * "mesa-de-lorenzo".
  *
  * Protocolo do firmware (texto, 115200 bps, 8N1, uma mensagem por linha terminada em '\n'):
- *   Pi -> ESP: "NOK\n"  aciona a saida de rejeicao (cilindro). O proprio firmware mantem a
- *                       saida acionada pelo tempo fixo TEMPO_NOK_MS e depois desarma.
+ *   Pi -> ESP: "NOK:<ms>\n" aciona a saida de rejeicao (cilindro) pelo tempo informado pelo
+ *                       backend (esp.tempo-acionamento-inicial-ms). "NOK\n" sem tempo usa o padrao
+ *                       do firmware (5000 ms). O firmware desarma sozinho ao fim do tempo.
  *   ESP -> Pi: linhas de texto de resposta ("NOK recebido...", "Comando desconhecido: ...").
  *              Sao apenas registradas no log. O firmware NAO envia estado de sensor.
  *
  * Consequencias:
  *  - Nao ha leitura de entrada: lerBit() e sempre false (o sensor capacitivo nao existe
  *    no firmware atual; ver inspecao.polling-habilitado).
- *  - A saida e por pulso: escreverBit(enderecoCilindro, true) envia NOK; com false nada e
- *    enviado, pois o firmware desarma sozinho. O tempo real do acionamento e o do firmware.
+ *  - A saida e por pulso: acionarPulso(enderecoCilindro, ms) envia "NOK:<ms>"; com false nada e
+ *    enviado, pois o firmware desarma sozinho. O tempo do acionamento e o do backend.
  *  - Ao abrir a porta, o NodeMCU reinicia (DTR); aguardamos o boot antes de enviar comandos.
  */
 @Service
@@ -108,6 +109,21 @@ public class EspSerialGateway implements EspGateway {
             return;
         }
         enviarLinha(COMANDO_NOK);
+    }
+
+    /** E11: envia "NOK:&lt;ms&gt;"; o firmware mantem a saida pelo tempo informado (dono unico do tempo). */
+    @Override
+    public void acionarPulso(int endereco, long ms) {
+        if (ms <= 0) {
+            throw new EspException("Tempo de acionamento invalido: " + ms + " ms.");
+        }
+        if (endereco != props.enderecoCilindroRejeicao()) {
+            throw new EspException("Endereco de saida " + endereco + " nao existe no firmware.");
+        }
+        if (porta == null || !porta.isOpen()) {
+            throw new EspException("ESP nao conectado (porta " + props.porta() + ").");
+        }
+        enviarLinha(COMANDO_NOK + ":" + ms);
     }
 
     // --- envio -------------------------------------------------------------

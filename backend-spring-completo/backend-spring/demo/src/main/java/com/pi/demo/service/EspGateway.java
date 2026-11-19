@@ -38,4 +38,12 @@ public interface EspGateway {
      * @throws EspException se a porta nao estiver conectada.
      */
     void escreverBit(int endereco, boolean ativar);
+
+    /**
+     * Aciona a saida por um pulso de {@code ms} milissegundos, com o tempo decidido pelo backend.
+     * Implementacoes reais enviam o tempo ao firmware; a padrao apenas liga a saida.
+     */
+    default void acionarPulso(int endereco, long ms) {
+        escreverBit(endereco, true);
+    }
 }

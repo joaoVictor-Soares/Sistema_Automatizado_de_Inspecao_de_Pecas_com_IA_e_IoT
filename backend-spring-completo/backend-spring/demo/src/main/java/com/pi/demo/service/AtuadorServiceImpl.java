@@ -68,7 +68,7 @@ public class AtuadorServiceImpl implements AtuadorService {
         synchronized (acionamentoLock) {
             try {
                 atuadorAcionado = true;
-                gateway.escreverBit(enderecoCilindro, true);
+                gateway.acionarPulso(enderecoCilindro, tempoAcionamentoMs);
                 eventos.publicar("ATUADOR_ACIONADO", EventoService.INFO,
                         "Cilindro acionado por " + tempoAcionamentoMs + "ms.");
                 Thread.sleep(tempoAcionamentoMs);
