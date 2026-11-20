@@ -105,11 +105,29 @@ def pesos_classe(rotulos):
     return {i: float(total / (len(CLASSES) * c)) for i, c in enumerate(contagem)}
 
 
+def liberar_ultimas_camadas(modelo, quantas):
+    """Ajuste fino: libera as ultimas `quantas` camadas da MobileNetV2 para treinar.
+    As camadas de BatchNormalization continuam congeladas (evita o colapso das estatisticas)."""
+    if quantas <= 0:
+        return 0
+    base = next(l for l in modelo.layers if isinstance(l, tf.keras.Model))
+    base.trainable = True
+    camadas = base.layers
+    for camada in camadas[:-quantas]:
+        camada.trainable = False
+    for camada in camadas:
+        if isinstance(camada, tf.keras.layers.BatchNormalization):
+            camada.trainable = False
+    return sum(1 for c in camadas if c.trainable)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Treina aprovada x reprovada com as pastas *_refinada.")
     ap.add_argument("--dados", default="../dados", help="pasta que contem aprovada_refinada e reprovada_refinada")
     ap.add_argument("--saida", default="modelo_inspecao_novo.tflite")
-    ap.add_argument("--epocas", type=int, default=25)
+    ap.add_argument("--epocas", type=int, default=25, help="epocas da fase 1 (cabeca, base congelada)")
+    ap.add_argument("--epocas-finas", type=int, default=15, help="epocas da fase 2 (ajuste fino); 0 desliga")
+    ap.add_argument("--camadas-finas", type=int, default=30, help="quantas camadas finais da base treinam na fase 2")
     ap.add_argument("--lote", type=int, default=32)
     ap.add_argument("--validacao", type=float, default=0.2)
     ap.add_argument("--seed", type=int, default=42)
@@ -131,6 +149,21 @@ def main(argv=None):
     ]
     historico = modelo.fit(treino, validation_data=validacao, epochs=args.epocas,
                            class_weight=pesos_classe(rotulos), callbacks=callbacks, verbose=2)
+    epocas_executadas = len(historico.history["loss"])
+
+    # Fase 2: ajuste fino. Libera as ultimas camadas da base com learning rate baixo.
+    if args.epocas_finas > 0:
+        liberadas = liberar_ultimas_camadas(modelo, args.camadas_finas)
+        print(f"\nAjuste fino: {liberadas} camadas da base treinando (BatchNorm congelado).")
+        modelo.compile(optimizer=tf.keras.optimizers.Adam(1e-5),
+                       loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+        callbacks_finos = [
+            tf.keras.callbacks.EarlyStopping(monitor="val_loss", patience=5, restore_best_weights=True),
+            tf.keras.callbacks.ReduceLROnPlateau(monitor="val_loss", factor=0.5, patience=2),
+        ]
+        historico_fino = modelo.fit(treino, validation_data=validacao, epochs=args.epocas_finas,
+                                    class_weight=pesos_classe(rotulos), callbacks=callbacks_finos, verbose=2)
+        epocas_executadas += len(historico_fino.history["loss"])
 
     # Metricas na validacao (matriz de confusao simples)
     prob = modelo.predict(validacao, verbose=0)
@@ -158,7 +191,8 @@ def main(argv=None):
         "imagens_total": int(len(rotulos)),
         "acuracia_validacao": round(float(acertos), 4),
         "matriz_confusao": matriz.tolist(),
-        "epocas_executadas": len(historico.history["loss"]),
+        "epocas_executadas": epocas_executadas,
+        "ajuste_fino_camadas": args.camadas_finas if args.epocas_finas > 0 else 0,
     }
     (saida.parent / "metricas_treino.json").write_text(json.dumps(metricas, indent=2, ensure_ascii=False),
                                                        encoding="utf-8")
