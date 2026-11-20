@@ -8,16 +8,17 @@
     "reprovadas": 209
   },
   "imagens_total": 471,
-  "acuracia_validacao": 0.4043,
+  "acuracia_validacao": 0.883,
   "matriz_confusao": [
     [
-      0,
-      56
+      52,
+      4
     ],
     [
-      0,
-      38
+      7,
+      31
     ]
   ],
-  "epocas_executadas": 7
+  "epocas_executadas": 36,
+  "ajuste_fino_camadas": 30
 }
