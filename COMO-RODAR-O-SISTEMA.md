@@ -58,7 +58,7 @@ Estrutura que você vai usar:
 | `ia-docker/modelos/` | Onde ficam `candidato.tflite` e `modelo_producao.tflite` (criada na primeira execução) |
 | `backend-spring-completo/backend-spring/demo/` | Backend Spring (`mvnw.cmd`, `pom.xml`) |
 | `mesa-de-lorenzo/mesa-de-lorenzo/` | Firmware da ESP8266 (PlatformIO) |
-| `backend-spring-completo/backend-spring/demo/src/main/java/com/pi/demo/captura-java/` | Captura Java (só para coletar fotos, opcional) |
+| `captura-java/` (raiz do repositório, fora do backend) | Captura Java (só para coletar fotos, opcional) |
 
 ---
 
@@ -348,7 +348,7 @@ Registros antigos (gravados em disco) continuam funcionando pelo mesmo endpoint.
 
 A captura Java serve para **juntar fotos** para treino, não para produção. Em produção, quem aciona o cilindro é o backend.
 
-- Está em `backend-spring-completo/.../captura-java/CapturaTampinha.java`, com `pom.xml` na mesma pasta.
+- Está em `captura-java/CapturaTampinha.java` na raiz do repositório, com `pom.xml` na mesma pasta. Não fica dentro do backend Spring: ela usa JavaCV, que o backend não tem, e por isso não é compilada pelo `mvnw.cmd spring-boot:run`.
 - O acionamento direto da ESP fica **desligado** por padrão. Para bancada, use `--acionar-direto`. Nunca use junto com `--backend`.
 - Coleta de fotos sem ESP: `--sem-esp`.
 
