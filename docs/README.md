@@ -2,100 +2,97 @@
 
 Projeto integrador do 4º termo do Tecnólogo em Análise e Desenvolvimento de Sistemas.
 
-Este repositório contém o código-fonte e a documentação para o Sistema de Verificação de Peças, uma solução ponta a ponta que integra automação industrial (CLP), inteligência artificial na borda (Edge Computing), backend local, nuvem e um aplicativo móvel.
-
-O objetivo do projeto é identificar e classificar o status de peças em uma esteira pneumática de produção em tempo real, **desviar automaticamente as peças reprovadas** por meio de um atuador pneumático, e fornecer relatórios detalhados na nuvem para administradores.
+O sistema identifica tampinhas de garrafa defeituosas em uma esteira em tempo real. Uma câmera fotografa cada peça na região de inspeção, uma IA classifica a imagem como aprovada ou reprovada, e as peças reprovadas são desviadas por um cilindro pneumático. As fotos das peças recusadas ficam gravadas no banco para consulta.
 
 ---
 
-## Arquitetura do Sistema
+## Como funciona
 
-O sistema foi arquitetado para garantir baixa latência na fábrica, decisão de controle segura no CLP e armazenamento seguro na nuvem, operando em quatro frentes:
+```
+Câmera USB ──► Backend Spring ──► API de IA (Docker, TensorFlow Lite)
+                 │   │                 │
+                 │   │                 └── classifica: aprovada / reprovada
+                 │   └──► PostgreSQL (peças recusadas e fotos)
+                 │
+                 └──► ESP8266 (serial) ──► driver ──► cilindro (desvia a peça)
+```
 
-### 1. Hardware & Automação Pneumática (CLP)
+1. O backend monitora a câmera. Quando a tampinha entra na **demarcação** (uma região da imagem com a cor verde da tampa), ele captura o quadro.
+2. O quadro vai para a API de IA, que refina a imagem e classifica a peça.
+3. **Aprovada:** nada acontece.
+4. **Reprovada:** o backend envia `NOK:<ms>` à ESP8266. O cilindro é acionado pelo tempo indicado e a peça é gravada com a foto no banco.
+5. O ciclo se repete até o operador parar a coleta.
 
-A esteira é automatizada por um **CLP Siemens S7-1500**, responsável pelo controle determinístico e em tempo real de todos os sensores e atuadores da bancada:
+Antes de iniciar, o backend verifica a câmera, a ESP e a IA. A coleta só começa com confirmação explícita do operador.
 
-- **Sensores (24V):** óptico difuso, indutivo, capacitivo, óptico de barreira e óptico de cor — usados para detectar presença, posição e características da peça.
-- **Cilindro de dupla ação:** responsável pelo transporte/avanço da peça ao longo da esteira.
-- **Cilindro de simples ação (atuador de rejeição):** dedicado a desviar fisicamente peças reprovadas para uma calha/coletor de rejeito, sem intervenção manual.
-- **Motor:** movimentação contínua da esteira.
+---
 
-O CLP é o único responsável por acionar fisicamente os cilindros — o Raspberry Pi nunca comanda atuadores diretamente. Isso mantém a lógica de segurança e tempo real no controlador industrial, que é o lugar correto para ela.
+## Componentes
 
-### 2. Edge Computing (Raspberry Pi)
+| Componente | Tecnologia | Função |
+|---|---|---|
+| Backend | Java 21, Spring Boot 4 | Orquestra câmera, ESP, IA e banco. Expõe a API REST com autenticação |
+| Câmera | USB, FFmpeg (DirectShow no Windows, v4l2 no Linux) | Captura os quadros da inspeção |
+| Firmware | ESP8266 NodeMCU (PlatformIO), pasta `mesa-de-lorenzo/` | Recebe `NOK:<ms>` pela serial a 115200 bps e aciona a saída do cilindro pelo tempo pedido |
+| API de IA | Python, FastAPI, TensorFlow Lite, MobileNetV2 (Docker), pasta `ia-docker/` | Refina a imagem, classifica e expõe `/predict` |
+| Treino | TensorFlow 2, pasta `ia-docker/treinamento/` | Treina um candidato e só o promove a produção se passar no portão de qualidade (acurácia ≥ 85%, recall mínimo ≥ 75%) |
+| Banco | PostgreSQL | Peças recusadas, fotos (`bytea`) e contadores de produção |
+| Captura Java (opcional) | JavaCV, pasta `captura-java/` | Coleta de fotos para treino. Não faz parte da produção |
 
-O cérebro de decisão de qualidade. Roda uma API em Spring Boot que:
+### Sobre o CLP
 
-- Atua como **cliente OPC-UA** do CLP S7-1500 (protocolo nativo do S7-1500, com suporte a autenticação e criptografia — ver seção de Segurança), lendo eventos de gatilho (peça detectada) e escrevendo o resultado da inspeção de volta para o CLP.
-- Aciona a câmera externa (USB) no momento indicado pelo CLP.
-- Processa a imagem localmente através de um modelo de Machine Learning (IA) e classifica a peça como aprovada ou reprovada.
-
-**Fluxo de rejeição de peça (novo):**
-
-1. O sensor detecta a peça e o CLP sinaliza o evento ao Raspberry Pi via OPC-UA.
-2. O Raspberry Pi aciona a câmera, executa a inferência de IA e obtém o resultado (aprovado/reprovado).
-3. O resultado é escrito de volta em uma variável OPC-UA lida pelo CLP.
-4. Se a peça for **reprovada**, o CLP aciona o cilindro de simples ação, desviando a peça da linha principal para o coletor de rejeito. Se **aprovada**, a peça segue o fluxo normal via cilindro de dupla ação/esteira.
-5. O evento completo (foto, resultado, timestamp) é registrado no histórico local e replicado para a nuvem.
-
-Essa decisão fecha o ciclo de automação do controle de qualidade: o sistema não depende mais de um operador remover manualmente a peça defeituosa.
-
-### 3. Controle Móvel
-
-Um aplicativo React Native na rede local permite aos operadores visualizarem a foto recém-tirada, o status da peça, o histórico diário da máquina e o estado do CLP em tempo real.
-
-**Por que o celular do colaborador em vez de uma interface fixa:**
-
-- **Mobilidade real:** o operador não fica preso a um painel fixo ao lado da esteira — recebe o status e alertas de rejeição onde estiver na fábrica.
-- **Custo de implantação:** atende à restrição de baixo custo do projeto, evitando comprar, instalar e manter um painel/tablet dedicado por linha.
-- **Escalabilidade:** permite notificar múltiplos operadores/supervisores simultaneamente caso a fábrica tenha mais de uma linha.
-- **Alertas em tempo real onde a pessoa estiver:** com notificações push, o operador é avisado de uma rejeição mesmo sem estar olhando para a esteira naquele instante.
-- **Aderência ao PPC do curso:** justifica tecnicamente o uso da disciplina de Aplicação Mobile com React Native no projeto.
-
-Como contrapartida, o uso de dispositivo pessoal (BYOD) exige atenção redobrada à autenticação/autorização do app (ver Segurança) e a cuidados físicos do aparelho no ambiente industrial (poeira, quedas).
-
-### 4. Nuvem & Big Data
-
-Um banco de dados isolado em um container Docker no servidor disponibilizado, recebendo o histórico de inferências e os eventos de rejeição de forma assíncrona.
-
-O diagrama esquemático completo e atualizado da arquitetura está disponível na pasta `/docs/esquematico.jpg`.
+O plano original previa um CLP Siemens S7-1500 comunicando-se por OPC-UA, com o Raspberry Pi como cliente e uma API na nuvem. A implementação atual usa a ESP8266 pela porta serial no lugar do CLP. A parte de nuvem e o aplicativo móvel ainda não foram implementados.
 
 ---
 
 ## Segurança
 
-A comunicação entre Raspberry Pi e CLP via **OPC-UA** foi escolhida, entre outras razões, por já nascer com suporte nativo a autenticação e criptografia — reduzindo o risco (identificado na análise de lacunas do projeto) de comandos não autenticados trafegando na rede local. Autenticação do app mobile e do acesso administrativo continua como item a ser detalhado no backend (Spring Security).
+- Todas as rotas da API exigem token Bearer, exceto o login e o health check.
+- Há dois perfis: **OPERADOR** e **ADMIN**. Rotas de cadastro de usuários e de simulação são só para ADMIN.
+- O login tem limite de tentativas por janela de tempo.
+- Os tokens são assinados com um segredo configurável (`SEGURANCA_SEGREDO`). Sem ele, o segredo muda a cada subida e os tokens antigos deixam de valer.
+- A senha do administrador vem de `ADMIN_SENHA`. Se não for definida, uma senha aleatória aparece no log da primeira subida.
 
 ---
 
-## Stack Tecnológico
+## Estrutura do repositório
 
-### Hardware Associado
-- **CLP Siemens S7-1500:** controle determinístico dos sensores, do motor e dos cilindros pneumáticos (transporte e rejeição).
-- **Raspberry Pi:** processamento local, hospedagem do Backend e do modelo de IA.
-- **Câmera Externa:** captura padronizada de imagens.
-- **Sensores industriais (24V):** óptico difuso, indutivo, capacitivo, óptico de barreira, óptico de cor.
-- **Cilindros pneumáticos:** dupla ação (transporte) e simples ação (rejeição).
-
-### Software
-- **Backend (Edge):** Java 17+ e Spring Boot.
-- **Comunicação Industrial:** cliente OPC-UA (ex: Eclipse Milo) para integração com o CLP S7-1500.
-- **Inteligência Artificial:** Python, TensorFlow Lite / PyTorch (modelo exportado para inferência rápida).
-- **Mobile:** React Native (iOS & Android).
-- **Cloud / Infraestrutura:** Docker, Banco de Dados (PostgreSQL / MySQL).
+| Pasta | Conteúdo |
+|---|---|
+| `backend-spring-completo/backend-spring/demo/` | Backend Spring (Maven wrapper `mvnw`) |
+| `ia-docker/` | API de IA, treino, avaliação e `docker-compose.yml` |
+| `mesa-de-lorenzo/mesa-de-lorenzo/` | Firmware da ESP8266 (PlatformIO) |
+| `captura-java/` | Captura Java opcional para coleta de fotos |
+| `backend-esp/` | Notas de alteração do backend para o firmware atual |
+| `docs/` | Documentação original do projeto (diagramas, lista de materiais, modelo de dados) |
+| `COMO-RODAR-O-SISTEMA.md` | Passo a passo para subir o sistema no Windows |
+| `GUIA-RASPBERRY-PI.md` | Plano de migração do backend, câmera e ESP para o Raspberry Pi 4 |
+| `LEIA-ME-TESTE-BACKEND.md` | Roteiro curto de testes do backend |
 
 ---
 
-## Estrutura do Repositório
+## Como rodar
 
-Como este é um projeto multidisciplinar (Monorepo), os códigos estão divididos em subdiretórios específicos:
+O passo a passo completo está em [`COMO-RODAR-O-SISTEMA.md`](../COMO-RODAR-O-SISTEMA.md). Resumo:
 
-```text
-├── /app-react-native   # Interface mobile (App de Controle e Admin)
-├── /backend-spring     # API REST na Raspberry Pi (cliente OPC-UA, Câmera, IA e Rede)
-├── /cloud-docker       # Arquivos docker-compose para subir a nuvem
-├── /docs               # Documentação complementar, diagramas e assets
-├── /hardware           # Programa do CLP (TIA Portal — blocos/SCL) para sensores e atuadores
-└── /ia-modelo          # Notebooks de treinamento e modelo de ML final
-```
+1. Gravar o firmware na ESP8266 (`mesa-de-lorenzo/mesa-de-lorenzo`).
+2. Subir o PostgreSQL em container.
+3. Treinar o modelo e subir a API de IA com `docker compose` em `ia-docker/`.
+4. Subir o backend com `mvnw.cmd spring-boot:run` em `backend-spring-completo/backend-spring/demo/`.
+5. Fazer login, conferir `GET /api/inspecao/verificacao` e iniciar a coleta.
+
+---
+
+## Stack
+
+- **Backend:** Java 21, Spring Boot 4 (Web, Security, Data JPA, Actuator), jSerialComm
+- **IA:** Python 3.11, FastAPI, OpenCV e TFLite (`ai-edge-litert`) na API; TensorFlow 2 só no treino
+- **Firmware:** C++ (Arduino), PlatformIO, ESP8266 NodeMCU
+- **Infraestrutura:** Docker, PostgreSQL 16
+
+---
+
+## Status
+
+- **Validado na bancada (Windows):** verificação de câmera, ESP e IA; coleta automática; classificação de peça reprovada; envio de `NOK:4000` com acionamento e desacionamento do cilindro.
+- **Pendente:** calibração da demarcação, do atraso até o cilindro e do tempo do cilindro; acurácia com fotos novas; migração para o Raspberry Pi (ver `GUIA-RASPBERRY-PI.md`).
