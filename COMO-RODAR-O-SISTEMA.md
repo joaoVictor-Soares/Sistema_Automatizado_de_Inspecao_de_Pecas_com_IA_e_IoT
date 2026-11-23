@@ -2,7 +2,9 @@
 
 Este guia substitui o `ia-docker/LEIA-ME-IA.md` (que descreve o fluxo antigo, com modelo embutido e treino automático). Siga na ordem. Os comandos são para **Windows** (cmd e PowerShell).
 
-> **Aviso:** nada deste guia foi executado de ponta a ponta em hardware real. Ele descreve o que está no código. Cada etapa tem um teste de verificação; só avance quando o teste passar.
+> **Status:** o fluxo completo foi validado na mesa em Windows (câmera, ESP na COM7, IA em Docker e acionamento do cilindro). Ainda falta calibrar demarcação, atraso e tempo do cilindro (seção 10). Cada etapa tem um teste de verificação; só avance quando o teste passar.
+>
+> Para a migração do backend para o Raspberry Pi 4, veja `GUIA-RASPBERRY-PI.md`.
 
 ---
 
@@ -169,7 +171,7 @@ Deve voltar `status` (`aprovadas` ou `reprovadas`) e `confianca`.
 
 ### 5.3 Conferir a qualidade antes de confiar (recomendado)
 
-Use um conjunto de fotos **que não foram usadas no treino**:
+Use um conjunto de fotos **que não foram usadas no treino**. Crie a pasta `ia-docker\dados_teste\` com as subpastas `aprovada_refinada\` e `reprovada_refinada\` (ela não vem no repositório):
 
 ```bat
 cd ia-docker\treinamento
@@ -192,6 +194,8 @@ Defina só o que for diferente do padrão. No **cmd**, use `set`; no **PowerShel
 | `ESP_PORTA` | `COM7` | Porta da ESP (padrão já é COM7) |
 | `CAMERA_DSHOW` | `GENERAL WEBCAM` | Nome da câmera (passo 2) |
 | `CAMERA_FORMATO` | `dshow` | Padrão já é dshow no Windows |
+| `CAMERA_RESOLUCAO` | `640x360` | Resolução da captura. **Use 640x360**: a sua webcam não aceita 640x480 (ver seção 14). O padrão no código ainda é 640x480 |
+| `FFMPEG_PATH` | `C:\ffmpeg\bin\ffmpeg.exe` | Só se o `ffmpeg` não estiver no PATH |
 | `IA_BASE_URL` | `http://localhost:8000` | API de IA (padrão já é esse) |
 | `INSPECAO_ATRASO_ATUACAO` | `4s` | Tempo entre a demarcação e o cilindro (padrão 4s; calibrar) |
 | `ESP_TEMPO_ACIONAMENTO_MS` | `5000` | Tempo que o cilindro fica acionado (padrão 5000) |
@@ -205,6 +209,7 @@ Exemplo (cmd):
 ```bat
 set ESP_PORTA=COM7
 set CAMERA_DSHOW=GENERAL WEBCAM
+set CAMERA_RESOLUCAO=640x360
 set ADMIN_SENHA=troque-esta-senha
 set SEGURANCA_SEGREDO=troque-por-uma-chave-com-pelo-menos-32-caracteres
 ```
@@ -383,17 +388,29 @@ A captura Java serve para **juntar fotos** para treino, não para produção. Em
 | Verificação: "Camera indisponivel" | Nome errado em `CAMERA_DSHOW` ou câmera em uso | Passo 2; fechar outros apps de câmera |
 | Verificação: "ESP nao conectado" / porta ocupada | COM7 em uso por outro programa | Fechar monitor serial e a captura Java |
 | `400 Invalid HTTP request received` na chamada à IA | Cliente HTTP da versão antiga | Já corrigido (HTTP/1.1). Se voltar, reconstruir o backend (`mvnw.cmd clean package`) |
-| `[dshow] Could not set video options` ou avisos de `swscaler` | Avisos da câmera, geralmente inofensivos | Só preocupa se a captura falhar de fato |
+| Verificação: `Could not set video options` | Resolução pedida não é suportada pela câmera (a sua só aceita 640x360, 1280x720 e 1920x1080) | Definir `CAMERA_RESOLUCAO=640x360` e reiniciar o backend. Para conferir: `ffmpeg -f dshow -list_options true -i video="GENERAL WEBCAM"` |
+| Mensagem de câmera citando `/dev/video0` no Windows | Texto fixo do código; a captura real é a câmera DirectShow | Ignorar o caminho; o erro real vem depois do `ffmpeg falhou` |
+| Log do treino: "A API usara o modelo embutido" | Texto antigo no `preparar_modelo.py`; o modelo não está mais embutido | Ignorar. Sem `modelo_producao.tflite` a API não sobe (decisão E2). Ver passo 5.1 |
 | Peça passa sem ser recusada | Atraso ou tempo do cilindro mal calibrados | Passo 10.2 e 10.3 |
 | Muitas recusas com a IA fora do ar | Política de falha em modo A (fail-safe) | Esperado: `inspecao.falha-reprova=true`. Ver E9 |
 | Tokens param de funcionar ao reiniciar o backend | `SEGURANCA_SEGREDO` não definido | Definir o segredo com 32+ caracteres |
 
 ---
 
-## 15. O que ainda não foi validado
+## 15. Estado da validação
 
-- Compilação do backend e da captura Java no Windows (`mvnw.cmd` e Maven não rodaram neste ambiente).
-- Gravação do firmware e o acionamento real do cilindro com a fiação final.
-- Treino da MobileNetV2 (depende da internet para baixar os pesos).
+**Já validado na mesa (Windows):**
+
+- Backend compila e sobe com `mvnw.cmd spring-boot:run` (depois de mover a captura Java para a raiz).
+- Login, `GET /api/inspecao/verificacao` com ESP e IA OK.
+- `POST /api/inspecao/iniciar?confirmar=true` e a coleta em `MONITORANDO`.
+- Detecção da tampa verde na demarcação e envio à IA.
+- Peça reprovada: backend envia `NOK:4000`, o firmware aciona a saída e desaciona depois de 4 s.
+
+**Ainda não validado:**
+
+- Calibração da demarcação, do atraso até o cilindro e do tempo do cilindro (seção 10).
 - Acurácia do modelo com fotos novas (passo 5.3).
+- Gravação da foto recusada no banco com peça real (seção 11).
 - Latência da câmera: cada frame é uma chamada ao FFmpeg, o que pode perder tampas que passam rápido. Se isso acontecer na mesa, o próximo passo é manter um stream contínuo da câmera.
+- Treino da MobileNetV2 com download dos pesos (depende da internet).
